@@ -1,0 +1,303 @@
+{% extends "layouts/page.njk" %}
+
+{% from "components/section/page-intro/page-intro.njk" import pageIntro %}
+{% from "components/section/suitable-for/suitable-for.njk" import suitableForSection %}
+{% from "components/section/benefits/benefits.njk" import benefitsSection %}
+{% from "components/slider/team/team.njk" import teamSection %}
+{% from "components/section/links/links.njk" import linksSection %}
+
+{% set page_title = 'Гофроупаковка' %}
+{% set main_class = 'gofroupakovka-page' %}
+
+{% set intro_links = [
+    {href: 'assortment', name: 'Ассортимент'},
+    {href: 'activity', name: 'Инновации'},
+    {href: 'benefits', name: 'Преимущества'},
+    {href: 'stages', name: 'Этапы работы'},
+    {href: 'team', name: 'Ключевые лица'},
+    {href: 'geo', name: 'География'},
+    {href: 'sertificates', name: 'Сертификаты'}
+] %}
+
+{% set pi_data = {
+    class: 'gofro',
+    text: 'Одно из направлений деятельности компании SFT — производство трех- и пятислойного гофрокартона и гофроупаковки',
+    title: 'Гофроупаковка',
+    imgFull: '/assets/img/page-intro/gofro-bg',
+    imgTablet: '/assets/img/page-intro/gofro-bg-tablet'
+
+} %}
+
+
+{% block content %}
+
+    {{ pageIntro(pi_data.class, pi_data.text, pi_data.title, pi_data.imgFull, pi_data.imgTablet, intro_links) }}
+
+    {{ suitableForSection('Основные потребители гофропродукции — предприятия пищевой промышленности, включая кондитерские изделия, консервы, напитки, а также производители бытовой химии и косметики, стройматериалов, мебели, фармацевтики') }}
+
+
+    {% include "components/section/assortment/assortment-gofro.njk" %}
+
+
+    <section class="activity section" id="activity">
+        <div class="container">
+
+            <h2 class="activity__title">Мы создаём гофроупаковку, которая решает Ваши задачи</h2>
+
+            <div class="activity__arrows">
+                <button class="activity__prev" aria-label="Показать предыдущий слайд"></button>
+                <button class="activity__next" aria-label="Показать следующий слайд"></button>
+            </div>
+
+            <div class="activity__slider swiper">
+
+                <div class="activity__wrapper swiper-wrapper">
+
+                    <div class="activity__slide swiper-slide">
+                        <div class="glassy-card">
+                            <div class="glassy-card__wrapper">
+                                <p class="activity__name">Оптимизируем затраты на упаковку</p>
+
+                                <p class="activity__text">Изучаются области для улучшений в части композиционного состава и конструктива, оптимизации затрат, правильного соотношение цена-качество</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="activity__slide swiper-slide">
+                        <div class="glassy-card">
+                            <div class="glassy-card__wrapper">
+                                <p class="activity__name">Поднимаем продажи за счет привлекательности упаковки продукта</p>
+
+                                <p class="activity__text">Изучаются области для улучшений в части композиционного состава и конструктива, оптимизации затрат, правильного соотношение цена-качество</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="activity__slide swiper-slide">
+                        <div class="glassy-card">
+                            <div class="glassy-card__wrapper">
+                                <p class="activity__name">Увеличиваем скорость запуска новых упаковочных решений</p>
+
+                                <p class="activity__text">Изучаются области для улучшений в части композиционного состава и конструктива, оптимизации затрат, правильного соотношение цена-качество</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="activity__slide swiper-slide">
+                        <div class="glassy-card">
+                            <div class="glassy-card__wrapper">
+                                <p class="activity__name">Увеличиваем скорость запуска новых упаковочных решений</p>
+
+                                <p class="activity__text">Изучаются области для улучшений в части композиционного состава и конструктива, оптимизации затрат, правильного соотношение цена-качество</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="activity__bottom">
+                    <span class="activity__progressbar"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include "components/slider/video/video-dev.njk" %}
+
+    {% set benefits_subtitle = 'Наша опытная команда готова к реализации проектов любой сложности' %}
+
+    {% set benefits_main_title = 'Сервис и преимущества' %}
+
+    {% set benefits_data = [
+        {
+        icon: '/assets/img/benefits/icon-1.svg',
+        title: 'Уменьшение срока поставки с 14-ти до 1-го дня',
+        text: 'Риск останова производства по причине отсутствия упаковки Ваш OTIF=100% и штрафы от сетей в части срывов поставок по причинам отсутствия упаковки снижены до 0'
+        },
+        {
+        icon: '/assets/img/benefits/icon-2.svg',
+        title: 'Доставка точно в срок и нужном количестве',
+        text: 'Риск останова производства по причине отсутствия упаковки Ваш OTIF=100% и штрафы от сетей в части срывов поставок по причинам отсутствия упаковки снижены до 0'
+        },
+        {
+        icon: '/assets/img/benefits/icon-3.svg',
+        title: 'Колл-центр 100% запрос не оставлен без ответа',
+        text: 'Риск останова производства по причине отсутствия упаковки Ваш OTIF=100% и штрафы от сетей в части срывов поставок по причинам отсутствия упаковки снижены до 0'
+        },
+        {
+        icon: '/assets/img/benefits/icon-1.svg',
+        title: 'Обеспечиваем высококачественное обслуживание',
+        text: 'Риск останова производства по причине отсутствия упаковки Ваш OTIF=100% и штрафы от сетей в части срывов поставок по причинам отсутствия упаковки снижены до 0'
+        },
+        {
+        icon: '/assets/img/benefits/icon-2.svg',
+        title: 'Наше оборудование всегда находится в отличном состоянии',
+        text: 'Риск останова производства по причине отсутствия упаковки Ваш OTIF=100% и штрафы от сетей в части срывов поставок по причинам отсутствия упаковки снижены до 0'
+        }
+    ] %}
+
+
+    {{ benefitsSection(benefits_subtitle, benefits_data, benefits_main_title) }}
+
+
+    {% set stages_list = [
+        {
+            num: '01',
+            heading: 'Старт работ',
+            descr: 'Старт работ',
+            value: 'start',
+            isChecked: true
+        },
+        {
+            num: '02',
+            heading: 'Аналитика',
+            descr: 'Подготавливаем аудит жизненного цикла гофроупаковки',
+            value: 'analytics',
+            isChecked: false
+        },
+        {
+            num: '03',
+            heading: 'Согласование',
+            descr: 'Согласование',
+            value: 'alignment',
+            isChecked: false
+        },
+        {
+            num: '04',
+            heading: 'Проектирование',
+            descr: 'Проектирование',
+            value: 'designing',
+            isChecked: false
+        },
+        {
+            num: '05',
+            heading: 'Производство',
+            descr: 'Производство',
+            value: 'production',
+            isChecked: false
+        },
+        {
+            num: '06',
+            heading: 'Готовая упаковка',
+            descr: 'Готовая упаковка',
+            value: 'finish',
+            isChecked: false
+        }
+    ] %}
+
+
+    <section class="stages section" id="stages">
+        <div class="container">
+            <div class="stages__top">
+                <h2 class="stages__title">Этапы работы</h2>
+
+                <a href="#contact-us" class="stages__contact_us btn btn_gradient">Связаться с нами</a>
+            </div>
+
+            <div class="stages__wrapper">
+
+                {% for item in stages_list %}
+
+                    <article {% if item.isChecked %} class="stages__item active" {% else %} class="stages__item hidden" {% endif %} data-value="{{ item.value }}">
+                        <span class="stages__num">{{ item.num }}</span>
+                        <h3 class="stages__heading">{{ item.descr }}</h3>
+                        <p class="stages__descr">Изучаем области для улучшений в части композиционного состава и конструктива, оптимизируем затраты, правильного соотношение цена-качество</p>
+                    </article>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        <div class="stages__nav hidescrollbar">
+
+            <fieldset class="stages__fieldset">
+
+                {% for item in stages_list %}
+
+                    <label {% if item.isChecked %} class="stages__label active" {% else %} class="stages__label" {% endif %} data-value="{{ item.value }}">
+
+                        <input type="radio" class="stages__input" name="stage" value="{{ item.value }}" {% if item.isChecked %} checked {% endif %}/>
+
+                        <span class="stages__card">
+                            <span class="stages__step">{{ item.num }}</span>
+                            <span class="stages__name">{{ item.heading }}</span>
+                        </span>
+
+                    </label>
+
+                {% endfor %}
+
+                <div class="stages__progress">
+                    <div class="stages__line"></div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+    </section>
+
+    {% set team_list = [
+        {
+            img: '/assets/img/team/person-1',
+            person: 'Куров Андрей',
+            position: 'Директор',
+            department: 'СФТ Пакетджинг Центр'
+        },
+        {
+            img: '/assets/img/team/person-2',
+            person: 'Хан Владимир',
+            position: 'Директор по продажам',
+            department: 'СФТ Пакетджинг Кувшиново'
+        },
+        {
+            img: '/assets/img/team/person-3',
+            person: 'Сапунов Михаил',
+            position: 'Директор по продажам',
+            department: 'СФТ Пакетджинг Алексин'
+        },
+        {
+            img: '/assets/img/team/person-1',
+            person: 'Куров Андрей',
+            position: 'Директор',
+            department: 'СФТ Пакетджинг Центр'
+        },
+        {
+            img: '/assets/img/team/person-2',
+            person: 'Хан Владимир',
+            position: 'Директор по продажам',
+            department: 'СФТ Пакетджинг Кувшиново'
+        }
+    ] %}
+
+    {{ teamSection(team_list) }}
+
+    {% include "components/section/branches/branches.njk" %}
+
+    {% include "components/section/sertificates/sertificates.njk" %}
+
+    {% include "components/section/contact-us/contact-us.njk" %}
+
+    {% set links_data = [
+        {
+            title: 'Тарный картон',
+            imgFull: '/assets/img/links/links-bg-1',
+            imgTablet: '/assets/img/links/links-bg-1-tablet'
+        },
+        {
+            title: 'Ресайклинг',
+            imgFull: '/assets/img/links/links-bg-2',
+            imgTablet: '/assets/img/links/links-bg-2-tablet'
+        }
+    ] %}
+
+    {{ linksSection(links_data) }}
+
+
+{% endblock %}
+
+{% block modal %}
+    {% include "components/modal/about-detail/about-detail.njk" %}
+{% endblock %}

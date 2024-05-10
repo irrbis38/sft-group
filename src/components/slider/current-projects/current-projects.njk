@@ -1,0 +1,86 @@
+{% from "components/media/image.njk" import image %}
+
+<section class="current-projects section">
+    <div class="container">
+        <div class="current-projects__top">
+            <h2 class="current-projects__title">Текущие проекты</h2>
+
+            <div class="current-projects__nav">
+                <button class="current-projects__prev btn_round btn_prev_grey" aria-label="Показать предыдущий слайд"></button>
+                <button class="current-projects__next btn_round btn_next_grey" aria-label="Показать следующий слайд"></button>
+            </div>
+        </div>
+
+        {% set projects_data = [
+            {
+                name: 'Эколого-просветительский проект Бумажный бум',
+                imgFull: '/assets/img/current-projects/current_projects_1',
+                imgTablet: '/assets/img/current-projects/current_projects_1_tablet'
+            },
+            {
+                name: 'Новый гофрозавод в Майкоп',
+                imgFull: '/assets/img/current-projects/current_projects_2_tablet',
+                imgTablet: '/assets/img/current-projects/current_projects_2_tablet'
+            },
+            {
+                name: 'Эколого-просветительский проект Бумажный бум',
+                imgFull: '/assets/img/current-projects/current_projects_1',
+                imgTablet: '/assets/img/current-projects/current_projects_1_tablet'
+            },
+            {
+                name: 'Новый гофрозавод в Майкоп',
+                imgFull: '/assets/img/current-projects/current_projects_2_tablet',
+                imgTablet: '/assets/img/current-projects/current_projects_2_tablet'
+            },
+            {
+                name: 'Эколого-просветительский проект Бумажный бум',
+                imgFull: '/assets/img/current-projects/current_projects_1',
+                imgTablet: '/assets/img/current-projects/current_projects_1_tablet'
+            },
+            {
+                name: 'Новый гофрозавод в Майкоп',
+                imgFull: '/assets/img/current-projects/current_projects_2_tablet',
+                imgTablet: '/assets/img/current-projects/current_projects_2_tablet'
+            }
+        ] %}
+
+        <div class="current-projects__slider swiper">
+            <div class="current-projects__wrapper swiper-wrapper">
+
+                {% for item in projects_data %}
+
+                    <div class="current-projects__slide swiper-slide">
+
+                        <div class="current-projects__inner">
+
+                            <p class="current-projects__name">{{ item.name }}</p>
+
+                            <a href="#" class="current-projects__btn btn btn_white_to_green">Смотреть</a>
+
+                        </div>
+
+                        <div class="current-projects__bg">
+
+
+                            {{ image(
+                                src = item.imgFull,
+                                ext = 'jpg',
+                                adaptive = [{
+                                    breakpoint: 'tablet',
+                                    src: item.imgTablet,
+                                    ext: 'jpg'
+                                }],
+                                width = '693',
+                                height = '545'
+                            ) }}
+
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </div>
+</section>

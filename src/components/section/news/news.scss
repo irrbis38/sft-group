@@ -1,0 +1,22 @@
+.section-news {
+    .events-slider {
+        margin-left: 125px;
+    }
+
+    @include media(max, desktop) {
+        .events-slider {
+            margin-left: 0;
+        }
+
+        .news-slider {
+            margin-right: 60px;
+        }
+    }
+
+    @include media(max, tablet) {
+        .news-slider {
+            margin-right: 0;
+            margin-bottom: 50px;
+        }
+    }
+}

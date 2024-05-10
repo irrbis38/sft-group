@@ -1,0 +1,311 @@
+{% extends "layouts/page.njk" %}
+
+{% from "components/section/page-intro/page-intro-recycling.njk" import pageIntroRecycling %}
+{% from "components/section/suitable-for/suitable-for.njk" import suitableForSection %}
+{% from "components/section/description/description.njk" import descriptionSection %}
+{% from "components/section/benefits/benefits.njk" import benefitsSection %}
+{% from "components/slider/team/team.njk" import teamSection %}
+{% from "components/section/links/links.njk" import linksSection %}
+{% from "components/section/variety/variety.njk" import varietySection %}
+{% from "components/section/divisions/divisions.njk" import divisionsSection %}
+
+{% set page_title = 'Ресайклинг' %}
+{% set main_class = 'recycling-page' %}
+
+{% set pi_data = {
+    class: 'recycling',
+    text: 'Принимаем от юридических и физических лиц макулатуру для переработки и использования при изготовлении гофрокартона и изделий из него.',
+    title: 'Ресайклинг',
+    imgFull: '/assets/img/page-intro/recycling-bg',
+    imgTablet: '/assets/img/page-intro/recycling-bg-tablet'
+} %}
+
+{% block content %}
+
+    {{ pageIntroRecycling(pi_data.class, pi_data.text, pi_data.title, pi_data.imgFull, pi_data.imgTablet) }}
+
+
+    <div class="recycling__container">
+
+        <div class="recycling__item" id="recycle-paper">
+
+            {{ suitableForSection('Переработка вторсырья для SFT Group – это способ решать экологические проблемы экономическим способом') }}
+
+            {% set descr_data_recycle = {
+                input_name: 'recycle-paper'
+            } %}
+
+
+            {% set descr_inputs_recycle = [
+                {
+                    isChecked: true,
+                    value: 'stores',
+                    label: 'Торговые сети, магазины, рынки'
+                },
+                {
+                    isChecked: false,
+                    value: 'printing',
+                    label: 'Типографии, издательства'
+                },
+                {
+                    isChecked: false,
+                    value: 'municipal',
+                    label: 'Суды, управы, налоговые службы'
+                },
+                {
+                    isChecked: false,
+                    value: 'production',
+                    label: 'Производственные предприятия'
+                },
+                {
+                    isChecked: false,
+                    value: 'centers',
+                    label: 'Бизнес-центры, офисы'
+                },
+                {
+                    isChecked: false,
+                    value: 'management_companies',
+                    label: 'Управляющие компании ЖК'
+                },
+                {
+                    isChecked: false,
+                    value: 'offices',
+                    label: 'Бизнес-центры, офисы'
+                },
+                {
+                    isChecked: false,
+                    value: 'restaurants',
+                    label: 'Рестораны, кафе'
+                },
+                {
+                    isChecked: false,
+                    value: 'individuals',
+                    label: 'Физические лица'
+                }
+            ] %}
+
+            {{ descriptionSection(descr_data_recycle, descr_inputs_recycle) }}
+
+            {% include "components/section/cycle/cycle.njk" %}
+
+            {% set variety_data = {
+                title: 'Ассортимент принимаемых позиций',
+                button: 'Сдать вторичные ресурсы'
+            } %}
+
+            {{ varietySection(variety_data) }}
+
+            {{ divisionsSection('cities1') }}
+
+            {% include "components/section/fleet/fleet.njk" %}
+
+            {% set benefits_subtitle = 'Преимущества работы с нами' %}
+
+            {% set benefits_data = [
+                {
+                icon: '/assets/img/benefits/icon-7.svg',
+                title: 'Логистика',
+                text: 'Собственный автопарк и грузчики позволяют нам избавить вас от забот по вывозу вторичного сырья от места его образования, до места переработки на собственных производствах'
+                },
+                {
+                icon: '/assets/img/benefits/icon-8.svg',
+                title: 'Автоматизация',
+                text: 'Мы предоставляем прессовочное оборудование, для уменьшения объемов вторичного сырья у вас в офисе и на производстве.'
+                },
+                {
+                icon: '/assets/img/benefits/icon-9.svg',
+                title: 'Цифровизация',
+                text: 'Единая информационная система и автоматический прием заявок сокращает время вашего обращения к нам.'
+                },
+                {
+                icon: '/assets/img/benefits/icon-7.svg',
+                title: 'Логистика',
+                text: 'Собственный автопарк и грузчики позволяют нам избавить вас от забот по вывозу вторичного сырья от места его образования, до места переработки на собственных производствах'
+                }
+            ] %}
+
+
+            {{ benefitsSection(benefits_subtitle, benefits_data) }}
+
+
+            {% set team_list = [
+        {
+            img: '/assets/img/team/person-7',
+            person: 'Сафронов Анатолий',
+            position: 'Управляющий директор',
+            department: ''
+        },
+        {
+            img: '/assets/img/team/person-8',
+            person: 'Вишнякова Светлана',
+            position: 'Руководитель службы заготовки',
+            department: ''
+        },
+        {
+            img: '/assets/img/team/person-9',
+            person: 'Федоров Сергей',
+            position: 'Коммерческий директор',
+            department: ''
+        },
+        {
+            img: '/assets/img/team/person-7',
+            person: 'Сафронов Анатолий',
+            position: 'Управляющий директор',
+            department: ''
+        },
+        {
+            img: '/assets/img/team/person-8',
+            person: 'Вишнякова Светлана',
+            position: 'Руководитель службы заготовки',
+            department: ''
+        }
+    ] %}
+
+            {{ teamSection(team_list) }}
+
+        </div>
+
+        {# end 1 first #}
+
+        {# =============== #}
+        <div class="recycling__item " id="buy-paper">
+
+            {{ suitableForSection('Переработка вторсырья для SFT Group – это способ решать экологические проблемы экономическим способом') }}
+
+            {% set descr_data_buy = {
+                input_name: 'buy-paper'
+            } %}
+
+
+            {% set descr_inputs_buy = [
+                {
+                    isChecked: true,
+                    value: 'waste',
+                    label: 'Производители макулатурных тарных картонов'
+                },
+                {
+                    isChecked: false,
+                    value: 'sanitary',
+                    label: 'Производители санитарно-гигиенической продукции'
+                },
+                {
+                    isChecked: false,
+                    value: 'molding',
+                    label: 'Производители литых изделий из бумажной массы'
+                },
+                {
+                    isChecked: false,
+                    value: 'sleeves',
+                    label: 'Производители бумажных гильз, шпулей, втулок'
+                },
+                {
+                    isChecked: false,
+                    value: 'building',
+                    label: 'Производители строительных материалов'
+                },
+                {
+                    isChecked: false,
+                    value: 'polymer',
+                    label: 'Производители вторичной полимерной гранулы'
+                }
+            ] %}
+
+            {{ descriptionSection(descr_data_buy, descr_inputs_buy) }}
+
+            {% set variety_data = {
+                title: 'Ассортимент марок',
+                button: 'Связаться с нами'
+            } %}
+
+            {{ varietySection(variety_data) }}
+
+            {{ divisionsSection('cities2') }}
+
+            {% set benefits_subtitle2 = 'Преимущества работы с нами' %}
+
+            {% set benefits_data2 = [
+            {
+            icon: '/assets/img/benefits/icon-7.svg',
+            title: 'Логистика',
+            text: 'Собственный автопарк и грузчики позволяют нам избавить вас от забот по вывозу вторичного сырья от места его образования, до места переработки на собственных производствах'
+            },
+            {
+            icon: '/assets/img/benefits/icon-8.svg',
+            title: 'Автоматизация',
+            text: 'Мы предоставляем прессовочное оборудование, для уменьшения объемов вторичного сырья у вас в офисе и на производстве.'
+            },
+            {
+            icon: '/assets/img/benefits/icon-9.svg',
+            title: 'Цифровизация',
+            text: 'Единая информационная система и автоматический прием заявок сокращает время вашего обращения к нам.'
+            },
+            {
+            icon: '/assets/img/benefits/icon-7.svg',
+            title: 'Логистика',
+            text: 'Собственный автопарк и грузчики позволяют нам избавить вас от забот по вывозу вторичного сырья от места его образования, до места переработки на собственных производствах'
+            }
+        ] %}
+
+
+            {{ benefitsSection(benefits_subtitle2, benefits_data2) }}
+
+
+            {% set team_list2 = [
+        {
+            img: '/assets/img/team/person-7',
+            person: 'Сафронов Анатолий',
+            position: 'Управляющий директор',
+            department: ''
+        },
+        {
+            img: '/assets/img/team/person-8',
+            person: 'Вишнякова Светлана',
+            position: 'Руководитель службы заготовки',
+            department: ''
+        },
+        {
+            img: '/assets/img/team/person-9',
+            person: 'Федоров Сергей',
+            position: 'Коммерческий директор',
+            department: ''
+        },
+        {
+            img: '/assets/img/team/person-7',
+            person: 'Сафронов Анатолий',
+            position: 'Управляющий директор',
+            department: ''
+        },
+        {
+            img: '/assets/img/team/person-8',
+            person: 'Вишнякова Светлана',
+            position: 'Руководитель службы заготовки',
+            department: ''
+        }
+    ] %}
+
+            {{ teamSection(team_list2) }}
+
+        </div>
+        {# +++++++++++++++++++ #}
+    </div>
+
+
+    {% include "components/section/contact-us/contact-us.njk" %}
+
+
+    {% set links_data = [
+        {
+            title: 'Гофроупаковка',
+            imgFull: '/assets/img/links/links-bg-3',
+            imgTablet: '/assets/img/links/links-bg-3-tablet'
+        },
+        {
+            title: 'Тарный картон',
+            imgFull: '/assets/img/links/links-bg-1',
+            imgTablet: '/assets/img/links/links-bg-1-tablet'
+        }
+    ] %}
+
+    {{ linksSection(links_data) }}
+
+{% endblock %}

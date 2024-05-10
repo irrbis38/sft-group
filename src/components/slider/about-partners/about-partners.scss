@@ -1,0 +1,125 @@
+.partner-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    height: 100%;
+    padding: 50px;
+    border: 1px solid rgba($color: #98A4AE, $alpha: .5);
+    min-height: 300px;
+
+    @include media(max, desktop) {
+        padding: 30px;
+        min-height: 275px;
+    }
+
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 65px;
+        height: 65px;
+        background-color: var(--color-green);
+        border-radius: 50%;
+        margin-bottom: 30px;
+
+        img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+
+    &__text {
+        margin-top: auto;
+        max-width: 325px;
+
+        @include media(max, desktop) {
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+
+.swiper-slide:not(:last-child) .partner-card {
+    @include media(min, tablet) {
+        border-right: none;
+    }
+}
+
+.about-partners {
+    &__slider {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    &__pretitle {
+        @include media(max, desktop) {
+            order: 1;
+        }
+    }
+
+    &__title {
+        max-width: 740px;
+        margin-left: 125px;
+
+        @include media(max, desktop) {
+            order: 2;
+            margin-left: 0;
+            margin-bottom: 70px;
+        }
+
+        @include media(max, tablet) {
+            margin-bottom: 60px;
+        }
+    }
+
+    &__link {
+        width: 189px;
+        margin-left: auto;
+
+        @include media(max, desktop) {
+            order: 4;
+            margin-top: auto;
+        }
+
+        @include media(max, tablet) {
+            order: 3;
+            width: 100%;
+            margin-bottom: 60px;
+        }
+    }
+
+    &__head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-top: 130px;
+        flex-grow: 1;
+
+        @include media(max, desktop) {
+            margin-top: 0;
+            order: 3;
+        }
+
+        @include media(max, tablet) {
+            order: 4;
+        }
+
+        &-title {
+            color: var(--color-grey);
+            max-width: 200px;
+        }
+    } 
+
+    .swiper-wrapper {
+        margin-top: 30px;
+        @include media(max, desktop) {
+            order: 5;
+        }
+    }
+} 

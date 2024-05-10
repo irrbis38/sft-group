@@ -1,0 +1,124 @@
+// ==============================
+// ==== LINKS ====
+// ==============================
+
+.links__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+
+    @media (max-width: 575px) {
+        display: block;
+    }
+}
+
+.links__item {
+    flex: 1 1 auto;
+    position: relative;
+    min-height: 335px;
+
+    border-radius: var(--border-radius, 23px);
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        padding-top: 101%;
+    }
+
+    @media (max-width: 575px) {
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.links__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #cca075;
+    border-radius: var(--border-radius, 23px);
+    overflow: hidden;
+
+    picture,
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.links__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 50px;
+
+    @include media(max, desktop) {
+        padding: 30px;
+    }
+}
+
+.links__title {
+    max-width: 450px;
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 112%;
+    color: var(--color-white, #ffffff);
+
+    @include media(max, desktop) {
+        margin-bottom: 30px;
+        font-size: 25px;
+        line-height: 120%;
+    }
+
+    @include media(max, tablet) {
+        margin-bottom: 25px;
+        font-size: 20px;
+        line-height: 140%;
+    }
+}
+
+.links__subtitle {
+    max-width: 390px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--color-white, #ffffff);
+
+    @include media(max, desktop) {
+        font-size: 14px;
+        line-height: 157%;
+    }
+
+    @include media(max, tablet) {
+        font-size: 12px;
+        line-height: 150%;
+    }
+}
+
+.links__more {
+    width: max-content;
+    min-width: 200px;
+
+    @include media(max, tablet) {
+        width: 100%;
+        min-width: unset;
+    }
+}

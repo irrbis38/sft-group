@@ -1,0 +1,42 @@
+.ui-buttons {
+    padding: 100px 0;
+    background-color: var(--color-green, #18984e);
+
+    .h2 {
+        margin-bottom: 30px;
+        color: var(--color-white, #fff);
+    }
+}
+
+.ui-buttons__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+.ui-buttons__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px dashed #9747ff;
+    border-radius: 5px;
+}
+
+.ui-buttons__item--green {
+    background-color: var(--color-green, #18984e);
+}
+
+.ui-buttons__item--grey {
+    background-color: #d9d9d9;
+}
+
+.ui-buttons__item--white {
+    background-color: var(--color-white, #fff);
+}

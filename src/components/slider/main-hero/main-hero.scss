@@ -1,0 +1,99 @@
+.main-hero-slide {
+    position: relative;
+    
+    &__content {
+        padding: 125px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        height: 1000px;
+
+        @include media(max, desktop) {
+            padding: 105px 0 25px;
+            height: 800px;
+        }
+
+        @include media(max, tablet) {
+            padding: 145px 0 65px;
+        }
+    }
+
+    &__text {
+        padding: 42px 34px;
+        color: var(--color-white);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        width: 668px;
+        height: 582px;
+
+        background-color: var(--color-green);
+        
+        -webkit-clip-path: url('#main-hero-text-clip-path');
+        clip-path: url('#main-hero-text-clip-path');
+
+        span {
+            max-width: 489px;
+        }
+
+        @include media(max, desktop) {
+            padding: 30px 25px;
+            width: 491px;
+            height: 455px;
+
+            span {
+                max-width: 382px;
+            }
+        }
+
+        @include media(max, tablet) {
+            padding: 155px 100px 25px 20px;
+            width: 100%;
+            max-width: 335px;
+            height: auto;
+
+            span {
+                max-width: 215px;
+            }
+        }
+    }
+}
+
+.main-hero {
+    &__slider {
+        
+        @include media(min, desktop) {
+            -webkit-clip-path: url('#main-hero-section-clip-path');
+            clip-path: url('#main-hero-section-clip-path');
+        }
+
+        @include media(max, desktop) {
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .swiper-buttons-static {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 130px;
+            justify-content: flex-end;
+
+            @include media(max, desktop) {
+                bottom: 25px;
+
+                .swiper-button-next,
+                .swiper-button-prev {
+                    background-color: rgba($color: #fff, $alpha: .2) !important;
+                }
+            }
+
+            @include media(max, tablet) {
+                bottom: 20px;
+            }
+        }
+    }
+}

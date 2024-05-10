@@ -1,0 +1,80 @@
+{% macro image(
+    src = '',
+    adaptive = [],
+    ext = '',
+    width = '',
+    height = '',
+    alt = 'Изображение',
+    class = '',
+    isBackground = false,
+    isFullWith = false, 
+    retinaSize = true
+) %}
+    <picture class="{{ class }} picture {{ 'picture_background' if isBackground }} {{ 'picture_full-width' if isFullWith }}">
+        {% if adaptive | length %}
+            {% for source in adaptive %}
+
+                {% if source.breakpoint === 'tablet' %}
+                    {% set media = '(max-width: 1199px)' %}
+                {% elif source.breakpoint === 'mobile' %}
+                    {% set media = '(max-width: 767px)' %}
+                {% endif %}
+
+                {# -------------------------------------------------------------------------------------- #}
+
+                {% set _src = {
+                    1x: source.src + '.' + 'webp',
+                    2x: source.src + '@2x.' + 'webp'
+                } %}
+
+                <source
+                    type="image/webp"
+                    media="{{ media }}"
+                    srcset="{{ _src.1x }} 1x{{ ' ,' + _src.2x + ' 2x' if retinaSize }}"
+                >
+
+                {# -------------------------------------------------------------------------------------- #}
+
+                {% set _src = {
+                    1x: source.src + '.' + source.ext,
+                    2x: source.src + '@2x.' + source.ext
+                } %}
+
+                <source
+                    type="image/{{ 'jpeg' if source.ext === 'jpeg' or 'jpg' else source.ext }}"
+                    media="{{ media }}"
+                    srcset="{{ _src.1x }} 1x{{ ' ,' + _src.2x + ' 2x' if retinaSize }}"
+                >
+            {% endfor %}
+        {% endif %}
+
+        {# -------------------------------------------------------------------------------------- #}
+
+        {% set _src = {
+            1x: src + '.' + 'webp',
+            2x: src + '@2x.' + 'webp'
+        } %}
+
+        <source
+            type="image/webp"
+            srcset="{{ _src.1x }} 1x{{ ' ,' + _src.2x + ' 2x' if retinaSize }}"
+        >
+
+        {# -------------------------------------------------------------------------------------- #}
+
+        {% set _src = {
+            1x: src + '.' + ext,
+            2x: src + '@2x.' + ext
+        } %}
+
+        <img
+            src="{{ _src.1x }}"
+            {% if retinaSize %}
+                srcset="{{ _src.1x }} 1x, {{ _src.2x }} 2x"
+            {% endif %}
+            width="{{ width }}"
+            height="{{ height }}"
+            alt="{{ alt }}"
+        >
+    </picture>
+{% endmacro %}

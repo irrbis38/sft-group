@@ -1,0 +1,89 @@
+@import "./utilites/grid";
+@import "./utilites/typography";
+
+.list-reset {
+    @include list-reset;
+}
+
+.rounded {
+    border-radius: var(--border-radius);
+}
+
+.hidden {
+    display: none;
+}
+
+.icon {
+    display: inline-block;
+    &::before {
+        content: "";
+        display: block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.hidescrollbar {
+    // hide scrollbar in Firefox
+    scrollbar-width: none;
+
+    // hide scrollbar in Chrome, Safari
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        display: none;
+        width: 0;
+        height: 0;
+    }
+}
+
+.text-grey {
+    color: var(--color-grey);
+}
+
+.text-content {
+    &__block {
+        margin-bottom: 40px;
+
+        @include media(max, desktop) {
+            margin-bottom: 30px;
+            
+            br {
+                display: none;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    p {
+        margin-bottom: 15px;
+
+        @include media(max, desktop) {
+            margin-bottom: 10px;
+            
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.big-text {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 36px;
+
+    @include media(max, tablet) {
+        font-size: 20px;
+        line-height: 28px;
+
+
+        br {
+            display: none;
+        }
+    }
+}

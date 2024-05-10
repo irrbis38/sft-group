@@ -1,0 +1,129 @@
+<section class="branches section" id="geo">
+    <div class="container">
+
+        <div class="branches__container">
+
+
+            <div class="branches__top">
+
+                <h2 class="branches__title">Мы рядом с Вами</h2>
+
+                <p class="branches__subtitle h2">Четыре филиала обеспечивают эффективную логистику</p>
+
+            </div>
+
+            {% set branches_data = [
+                    {
+                        isActive: true,
+                        name: 'СФТ Пакеджинг Кувшиново,',
+                        region: 'Тверская область',
+                        place: 'kuvshinovo'
+                    },
+                    {
+                        isActive: false,
+                        name: 'СФТ Пакеджинг Таганрог,',
+                        region: 'Ростовская область',
+                        place: 'taganrog'
+                    },
+                    {
+                        isActive: false,
+                        name: 'СФТ Пакеджинг Майкоп,',
+                        region: 'Республика Адыгея',
+                        place: 'maikop'
+                    },
+                    {
+                        isActive: false,
+                        name: 'СФТ Пакеджинг Алексин,',
+                        region: 'Тульская область',
+                        place: 'aleksin'
+                    }
+                ] %}
+
+            {% set branches_map_data = [
+                    {
+                        isActive: true,
+                        name: 'СФТ Пакеджинг Кувшиново,',
+                        region: 'Тверская область',
+                        place: 'kuvshinovo'
+                    },
+                    {
+                        isActive: false,
+                        name: 'СФТ Пакеджинг Майкоп,',
+                        region: 'Республика Адыгея',
+                        place: 'maikop'
+                    },
+                    {
+                        isActive: false,
+                        name: 'СФТ Пакеджинг Таганрог,',
+                        region: 'Ростовская область',
+                        place: 'taganrog'
+                    },
+
+                    {
+                        isActive: false,
+                        name: 'СФТ Пакеджинг Алексин,',
+                        region: 'Тульская область',
+                        place: 'aleksin'
+                    }
+                ] %}
+
+            <div class="branches__nav">
+
+                {% for item in branches_data %}
+
+                    <div {% if item.isActive %} class="branches__item active" {% else %} class="branches__item" {% endif %} data-place="{{ item.place }}">
+
+                        <div class="branches__heading">
+                            <div class="branches__content">
+                                <span class="branches__name">{{ item.name }}</span>
+                                <span class="branches__region">{{ item.region }}</span>
+                            </div>
+                        </div>
+
+                        <div class="branches__descr">
+                            <span class="branches__adress">385012, Республика Адыгея, г. Майкоп, пер. Профсоюзный, 2
+                            </span>
+                            <a href="tel:88006009800" class="branches__phone">8 800 6009800
+                            </a>
+
+                            <a href="#" class="branches__link" download>Скачать схему проезда</a>
+
+                            <button class="branches__link" data-modal="#modal-about-detail">Подробнее о заводе</button>
+                        </div>
+
+                    </div>
+
+
+                {% endfor %}
+
+
+            </div>
+
+
+            <div class="branches__geography">
+
+
+                <div class="branches__inner">
+                    <div class="branches__map">
+                        <img class="branches__map_picture" src="/assets/img/branches/branches-map-full.svg" alt=""/>
+                    </div>
+
+                    {% for item in branches_map_data %}
+
+                        <button class="branches__btn branches__btn--{{ item.place }} {% if item.isActive %} active {% endif %}" aria-label="Показать информацию об отделении {{ item.name }}" data-place="{{ item.place }}">
+                            <span></span>
+                        </button>
+
+                    {% endfor %}
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="block_with_bottom_line"></div>
+    </div>
+</section>

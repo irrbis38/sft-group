@@ -1,0 +1,28 @@
+.event-card {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    &__tag {
+        padding: 4px 18px;
+        color: var(--color-white);
+        background-color: var(--color-green);
+        border-radius: 50px;
+
+        @include media(max, tablet) {
+            font-size: 12px;
+        }
+    }
+
+    &__address {
+        margin-top: 8px;
+    }
+
+    &__descr {
+        margin-top: 35px;
+
+        @include media(max, desktop) {
+            margin-top: 30px;
+        }
+    }
+}

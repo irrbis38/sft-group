@@ -1,0 +1,222 @@
+.contact-us {
+    position: relative;
+    padding: 50px 60px 50px 50px;
+    background: var(--color-green, #18984e)
+        url("../img/contact-us/contact-us-bg.png") center / cover no-repeat;
+
+    @include media(max, desktop) {
+        padding: 30px;
+        background: var(--color-green, #18984e);
+    }
+
+    @include media(max, tablet) {
+        padding: 30px 20px 45px;
+    }
+}
+
+.contact-us__bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius, 23px);
+    pointer-events: none;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -28.08%;
+        right: -7.94%;
+        z-index: 0;
+        width: 658px;
+        height: 493px;
+        width: 91.64%;
+        height: 102.71%;
+        border-radius: 100%;
+        background: linear-gradient(321deg, #49a071 1.04%, #b0ee00 100%);
+        filter: blur(100px);
+    }
+
+    @include media(max, desktop) {
+        display: block;
+    }
+}
+
+.contact-us__wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+
+    @include media(max, desktop) {
+        display: block;
+    }
+}
+
+.contact-us__block {
+    flex: 1 1 50%;
+
+    &:nth-child(1) {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: -4px;
+            top: 50%;
+            width: 1px;
+            height: calc(100% + 100px);
+            transform: translateY(-50%);
+            background-color: var(--color-white, #fff);
+        }
+    }
+
+    @include media(max, desktop) {
+        &:nth-child(1) {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.contact-us__tittle {
+    max-width: 460px;
+    color: var(--color-white, #fff);
+
+    @include media(max, desktop) {
+        max-width: 500px;
+        margin-bottom: 55px;
+    }
+
+    @include media(max, tablet) {
+        font-size: 25px;
+        line-height: 1.2;
+    }
+
+    @include media(max, mobile) {
+        font-size: 18px;
+    }
+}
+
+.contact-us__form {
+    padding-left: 50px;
+
+    @include media(max, desktop) {
+        padding-left: 0;
+    }
+}
+
+.contact-us__fieldset {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 45px 0;
+    margin-bottom: 48px;
+
+    @include media(max, desktop) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 45px 40px;
+    }
+
+    @include media(max, tablet) {
+        grid-template-columns: 1fr;
+        gap: 45px 0;
+    }
+}
+
+.contact-us__bottom {
+    @include media(max, desktop) {
+        display: flex;
+        align-items: center;
+        gap: 0 25px;
+    }
+
+    @include media(max, tablet) {
+        display: block;
+    }
+}
+
+.contact-us__submit {
+    width: 100%;
+
+    @include media(max, desktop) {
+        width: auto;
+    }
+
+    @include media(max, tablet) {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.contact-us__confirm {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 260px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--color-white, #fff);
+
+    @include media(max, desktop) {
+        position: static;
+        max-width: 350px;
+    }
+
+    @include media(max, tablet) {
+        max-width: 450px;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.contact-us.contact-us__contacts {
+    background: var(--color-green, #18984e);
+
+    .contact-us__bg {
+        display: block;
+    }
+
+    .contact-us__tittle {
+        max-width: 460px;
+        font-size: 30px;
+        line-height: 120%;
+
+        @include media(max, desktop) {
+            max-width: 470px;
+            font-size: 25px;
+            margin-bottom: 55px;
+        }
+
+        @include media(max, tablet) {
+            max-width: 330px;
+            font-size: 18px;
+        }
+    }
+
+    .contact-us__fieldset {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 45px 40px;
+
+        @include media(max, tablet) {
+            grid-template-columns: 1fr;
+            gap: 45px 0;
+        }
+    }
+
+    .input_item__email,
+    .input_item__comment {
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        @include media(max, tablet) {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+    }
+}

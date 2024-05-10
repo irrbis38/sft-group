@@ -1,0 +1,58 @@
+{% macro benefitsSection(
+    benefits_subtitle,
+    benefits_data,
+    benefits_main_title
+) %}
+
+    <section class="benefits section" id="benefits">
+        <div class="container">
+
+            {% if benefits_main_title %}
+
+                <h2 class="benefits__title">{{ benefits_main_title }}</h2>
+
+            {% endif %}
+
+
+            <div class="benefits__top">
+
+                <p class="benefits__subtitle h2">{{ benefits_subtitle }}</p>
+
+                <div class="benefits__arrows">
+                    <button class="benefits__prev btn_round btn_prev_grey" aria-label="Показать предыдущий слайд"></button>
+
+                    <button class="benefits__next btn_round btn_next_grey" aria-label="Показать следующий слайд"></button>
+                </div>
+
+            </div>
+
+
+            <div class="benefits__slider swiper">
+
+                <div class="benefits__wrapper swiper-wrapper">
+
+                    {% for item in benefits_data %}
+
+                        <article class="benefits__slide swiper-slide">
+
+                            <div class="benefits__icon">
+                                <img src="{{ item.icon }}" alt="" width="24" height="24"/>
+                            </div>
+
+                            <h3 class="benefits__heading">{{ item.title }}</h3>
+
+                            <p class="benefits__text">{{ item.text }}</p>
+
+                        </article>
+
+                    {% endfor %}
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+{% endmacro %}

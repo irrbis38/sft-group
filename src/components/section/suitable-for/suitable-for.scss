@@ -1,0 +1,58 @@
+// ==============================
+// ==== SUITABLE FOR ====
+// ==============================
+
+.suitable_for__wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 0 126px;
+
+    @include media(max, desktop) {
+        display: block;
+    }
+}
+
+.suitable_for__title {
+    flex: 0 0 225px;
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 157%;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--color-yellow, #ffb81c);
+        pointer-events: none;
+    }
+
+    @include media(max, desktop) {
+        margin-bottom: 30px;
+    }
+}
+
+.suitable_for__text {
+    flex: 0 1 760px;
+    max-width: 760px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 120%;
+
+    @include media(max, tablet) {
+        font-size: 20px;
+        line-height: 140%;
+    }
+}
+
+// recycling-page
+.recycling-page {
+    .suitable_for {
+        margin-bottom: 0;
+        background: linear-gradient(180deg, #fff 0%, #fafbfb 100%);
+    }
+}

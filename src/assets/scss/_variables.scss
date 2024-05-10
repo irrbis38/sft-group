@@ -1,0 +1,28 @@
+:root {
+    // Container
+    --container-width: 1440px;
+    --container-gutter-x: 24px;
+    --container-t-gutter-x: 25px;
+    --container-m-gutter-x: 20px;
+
+    // Round
+    --border-radius: 23px;
+
+    // Colors
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-green: #18984e;
+    --color-green-hover: #0c8640;
+    --color-yellow: #ffb81c;
+    --color-yellow-hover: #f6a900;
+    --color-grey: #98a4ae;
+    --color-grey1: #f0f2f4;
+
+    // Fonts
+    --font-Montserrat: "Montserrat";
+
+    // Scrollbar
+    --scrollbar-width: 3px;
+    --scrollbar-track-color: var(--color-grey1);
+    --scrollbar-thumb-color: var(--color-green);
+}

@@ -1,0 +1,18 @@
+{% macro suitableForSection(
+    text
+) %}
+
+    <section class="suitable_for section" id="next-section">
+        <div class="container container_with_bottom_line">
+
+            <div class="suitable_for__wrapper block_with_bottom_line">
+
+                <h3 class="suitable_for__title">Для кого подходит?</h3>
+
+                <p class="suitable_for__text">{{ text }}</p>
+
+            </div>
+        </div>
+    </section>
+
+{% endmacro %}

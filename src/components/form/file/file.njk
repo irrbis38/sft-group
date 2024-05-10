@@ -1,0 +1,10 @@
+{% macro fileUploader(
+    text = ''
+) %}
+<div class="file-upload">
+    <div class="file-upload__trigger-area">
+        <input type="file" class="file-upload__input">
+        <button class="file-upload__trigger">{{ text }}</button>
+    </div>
+</div>
+{% endmacro %}

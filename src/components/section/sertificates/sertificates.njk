@@ -1,0 +1,23 @@
+<section class="sertificates section" id="sertificates">
+    <div class="container sertificates__container">
+
+        <div class="sertificates__top">
+            <h2 class="sertificates__title">Качество, подкрепленное репутацией</h2>
+
+            <button class="sertificates__more btn btn_orange" type="button">Загрузить ещё</button>
+        </div>
+
+        {% set sert_list = [1, 2, 3, 4] %}
+
+        <ul class="sertificates__list">
+
+            {% for item in sert_list %}
+                <li class="sertificates__item">
+                    <a href="#" class="sertificates__link" target="_blank">Сертификат соответствия СМК СКБК требованиям ISO 9001:2015</a>
+                </li>
+            {% endfor %}
+
+        </ul>
+
+    </div>
+</section>

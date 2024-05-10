@@ -1,0 +1,60 @@
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+    &__trigger-area {
+        display: inline-block;
+        position: relative;
+    }
+
+    &__input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    &__trigger {
+        padding: 16.5px 25px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        background-color: var(--color-grey1);
+        border-radius: 50px;
+
+        &::after {
+            content: '';
+            width: 17px;
+            height: 16px;
+            background-image: url('data:image/svg+xml,<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5734 7.532L8.88512 14.2203C8.06575 15.0397 6.95444 15.5 5.79568 15.5C4.63692 15.5 3.52561 15.0397 2.70625 14.2203C1.88688 13.4009 1.42656 12.2896 1.42656 11.1309C1.42656 9.97211 1.88688 8.86081 2.70625 8.04144L9.39456 1.35312C9.94081 0.806878 10.6817 0.5 11.4542 0.5C12.2267 0.5 12.9676 0.806878 13.5138 1.35312C14.0601 1.89937 14.3669 2.64024 14.3669 3.41275C14.3669 4.18526 14.0601 4.92613 13.5138 5.47237L6.81822 12.1607C6.54509 12.4338 6.17466 12.5873 5.7884 12.5873C5.40215 12.5873 5.03171 12.4338 4.75859 12.1607C4.48547 11.8876 4.33203 11.5171 4.33203 11.1309C4.33203 10.7446 4.48547 10.3742 4.75859 10.1011L10.9375 3.92947" stroke="black" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        }
+    }
+
+    &__preview {
+        display: inline-flex;
+        gap: 5px;
+        font-size: 12px;
+        line-height: 18px;
+        padding: 3.5px 10.5px 3.5px 15.5px;
+        color: var(--color-grey);
+        background-color: var(--color-grey1);
+        border-radius: 100px;
+
+        &-remove {
+            padding: 5px;
+            &::before {
+                
+                content: '';
+                display: block;
+                width: 9px;
+                height: 9px;
+                background-image: url('data:image/svg+xml,<svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.28014 1.21986L4.5 4.43972M7.71986 7.65958L4.5 4.43972M4.5 4.43972L7.71986 1.21986M4.5 4.43972L1.28014 7.65958" stroke="%2398A4AE" stroke-width="0.789286"/></svg>');
+            }
+        }
+    }
+}

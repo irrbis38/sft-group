@@ -1,0 +1,9 @@
+{% macro newsCard(
+    title = 'Используя все созданные нами ресурсы, мы уверены, что сможем разработать для вас упаковку, которая будет более эффективной...', 
+    date = '12 декабря'
+) %}
+    <a href="#" class="news-card link-card">
+        <p class="news-card__title text-overflow" title="{{ title }}">{{ title }}</p>
+        <p class="news-card__date">{{ date }}</p>
+    </a>
+{% endmacro %}

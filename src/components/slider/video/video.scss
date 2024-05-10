@@ -1,0 +1,23 @@
+.video-slider {
+    &__head {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 30px;
+
+        .swiper-buttons-static {
+            margin-left: auto;
+        }
+    }
+
+    &__title {
+        max-width: 460px;
+
+        @include media(max, desktop) {
+            max-width: 420px;
+        }
+
+        @include media(max, tablet) {
+            max-width: 240px;
+        }
+    }
+}

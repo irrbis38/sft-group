@@ -1,0 +1,113 @@
+@mixin grid($columns, $rows, $gap) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat($columns, 1fr);
+        gap: $gap;
+    }
+
+    @if($columns >= 1) {
+        @for $i from $columns through 1 {
+            .col-#{$i} {
+                grid-column: $i span;
+            }
+        }
+    }
+
+    @if($rows >= 1) {
+        @for $i from $rows through 1 {
+            .row-#{$i} {
+                grid-row: $i span;
+            }
+        }
+    }
+
+    @media (min-width: 576px) {
+        @if($columns >= 1) {
+            @for $i from $columns through 1 {
+                .col-xs-#{$i} {
+                    grid-column: $i span;
+                }
+            }
+        }
+
+        @if($rows >= 1) {
+            @for $i from $rows through 1 {
+                .row-xs-#{$i} {
+                    grid-row: $i span;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        @if($columns >= 1) {
+            @for $i from $columns through 1 {
+                .col-sm-#{$i} {
+                    grid-column: $i span;
+                }
+            }
+        }
+
+        @if($rows >= 1) {
+            @for $i from $rows through 1 {
+                .row-sm-#{$i} {
+                    grid-row: $i span;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        @if($columns >= 1) {
+            @for $i from $columns through 1 {
+                .col-md-#{$i} {
+                    grid-column: $i span;
+                }
+            }
+        }
+
+        @if($rows >= 1) {
+            @for $i from $rows through 1 {
+                .row-md-#{$i} {
+                    grid-row: $i span;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        @if($columns >= 1) {
+            @for $i from $columns through 1 {
+                .col-lg-#{$i} {
+                    grid-column: $i span;
+                }
+            }
+        }
+
+        @if($rows >= 1) {
+            @for $i from $rows through 1 {
+                .row-lg-#{$i} {
+                    grid-row: $i span;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1400px) {
+        @if($columns >= 1) {
+            @for $i from $columns through 1 {
+                .col-xl-#{$i} {
+                    grid-column: $i span;
+                }
+            }
+        }
+
+        @if($rows >= 1) {
+            @for $i from $rows through 1 {
+                .row-xl-#{$i} {
+                    grid-row: $i span;
+                }
+            }
+        }
+    }
+}

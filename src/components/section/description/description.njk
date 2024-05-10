@@ -1,0 +1,50 @@
+{% macro descriptionSection(
+    descr_data,
+    descr_inputs
+) %}
+
+    <div class="description section">
+        <div class="container">
+            <div class="description__container">
+
+
+                <div class="description__fieldset hidescrollbar">
+
+                    {% for item in descr_inputs %}
+
+                        <label class="description__label">
+
+                            <input type="radio" class="description__radio" name="{{ descr_data.input_name }}" value="{{ item.value }}" {% if item.isChecked %} checked {% endif %}/>
+
+                            <span class="description__btn btn btn_white_to_green">{{ item.label }}</span>
+
+                        </label>
+
+                    {% endfor %}
+
+                </div>
+
+
+                <div class="description__content">
+
+                    {% for item in descr_inputs %}
+
+                        <div class="description__content_inner {% if item.isChecked %} active {% endif %}" data-value="{{ item.value }}">
+
+                            <p class="description__heading">{{ item.label }}</p>
+
+                            <p class="description__text">Если вы управляете розничными магазинами или сетью магазинов, переработка картона и бумаги может помочь вам создать экологически чистую и устойчивую
+                                упаковку для товаров, что повысит привлекательность вашего бренда.</p>
+
+                        </div>
+
+                    {% endfor %}
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endmacro %}

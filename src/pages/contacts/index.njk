@@ -1,0 +1,38 @@
+{% extends "layouts/page-footer-light.njk" %}
+
+{% from "components/section/divisions/divisions-contacts.njk" import divisionsContactsSection %}
+
+{% from "components/media/image.njk" import image %}
+
+{% set page_title = 'Контакты' %}
+{% set main_class = 'contacts-page' %}
+
+
+{% block content %}
+
+    <section class="contacts_intro section">
+        <div class="contacts_intro__bg">
+            {{ image(
+                '/assets/img/page-intro/gofro-bg',
+                ext = 'jpg',
+                adaptive = [{
+                    breakpoint: 'tablet',
+                    src: '/assets/img/page-intro/gofro-bg-tablet',
+                    ext: 'jpg'
+                }],
+                width = '1440',
+                height = '400',
+                isBackground = false
+            ) }}
+        </div>
+
+        <div class="container">
+            <h1 class="contacts_intro__title">Контакты</h1>
+        </div>
+    </section>
+
+    {{ divisionsContactsSection('category') }}
+
+    {% include "components/section/contact-us/contact-us-contacts.njk" %}
+
+{% endblock %}

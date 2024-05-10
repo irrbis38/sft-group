@@ -1,0 +1,45 @@
+{% extends "layouts/modal.njk" %}
+
+{% set modal_id = 'modal-about-detail' %}
+{% set isAside = true %}
+
+{% block content %}
+    <div class="about-detail">
+        <div class="about-detail__head">
+            <span class="about-detail__title h3">Каменская БКФ</span>
+            <span class="about-detail__address">СФТ Пакеджинг Кувшиново, Тверская область</span>
+        </div>
+        <div class="about-detail__body">
+            <ul class="about-detail__properties list-reset">
+                <li class="about-detail__property">
+                    <span class="about-detail__property-name">Год основания:</span>
+                    <span class="about-detail__property-value">1799 год</span>
+                </li>
+                <li class="about-detail__property">
+                    <span class="about-detail__property-name">Количество сотрудников:</span>
+                    <span class="about-detail__property-value">10 000 чел.</span>
+                </li>
+                <li class="about-detail__property">
+                    <span class="about-detail__property-name">Производственная мощность:</span>
+                    <span class="about-detail__property-value">190 млн. м2/год </span>
+                </li>
+            </ul>
+            {% include "components/slider/detail/detail.njk" %}
+            <div class="about-detail__content text-content">   
+                <div class="text-content__block">
+                    <p>
+                        Каменская БКФ является крупнейшим российским производителем макулатурного тарного картона, обладает самым современным и мощным производством бумажной продукции из вторичного сырья (макулатуры). Ассортимент макулатурного тарного картона Каменской БКФ включает различные марки картона для плоских слоёв SFT Liner и бумаги для гофрирования SFT Medium, которые позволяют производить всю линейку марок гофрированного картона.
+                    </p>
+                    <br>
+                    <p>
+                        Производство упаковки из гофрированного картона СФТ Пакеджинг Кувшиново оснащено современным оборудованием. Предприятие производит различные виды упаковки из гофрированного картона с нанесением печати до 5-ти цветов, в т. ч. полноцветной печати.
+                    </p>
+                </div>
+                <div class="text-content__block">
+                    <p class="text-grey">Сертификаты:</p>
+                    <p>ISO 9001:2015, FSSC 22000, FSC, SEDEX (SMETA)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

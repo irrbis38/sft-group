@@ -1,0 +1,31 @@
+.news-slider {
+
+    &__head {
+        margin-bottom: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        @include media(max, desktop) {
+            margin-bottom: 40px;
+        }
+    }
+
+    .swiper-slide {
+        margin-top: 0 !important;
+        height: auto !important;
+
+        &.first-half {
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--color-grey);
+        }
+    }
+
+    .swiper-wrapper {
+        row-gap: 70px;
+
+        @include media(max, desktop) {
+            row-gap: 50px;
+        }
+    }
+}

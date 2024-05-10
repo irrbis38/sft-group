@@ -1,0 +1,82 @@
+<section class="our_partners section">
+    <div class="container">
+
+
+        <div class="our_partners__top">
+            <h2 class="our_partners__title">Наши партнеры</h2>
+
+            <div class="our_partners__nav">
+                <button class="our_partners__prev btn_round btn_prev_grey" aria-label="Показать предыдущий слайд"></button>
+                <button class="our_partners__next btn_round btn_next_grey" aria-label="Показать следующий слайд"></button>
+            </div>
+        </div>
+
+        {% set partners_data = [
+            {
+                logo: '/assets/img/our-partners/our_partners_icon_1.svg',
+                name: 'GT Group',
+                descr: 'Крупнейшая в России группа компаний'
+            },
+            {
+                logo: '/assets/img/our-partners/our_partners_icon_2.svg',
+                name: 'ЗИКО',
+                descr: 'Предлагают комплексные решения для гофропредприятий'
+            },
+            {
+                logo: '/assets/img/our-partners/our_partners_icon_3.svg',
+                name: 'Elma CRM',
+                descr: 'Мы создаём инструменты для лёгкого перехода к цифровой компании'
+            },
+            {
+                logo: '/assets/img/our-partners/our_partners_icon_4.svg',
+                name: 'ЦСР',
+                descr: 'Некоммерческая организация, аналитический центр'
+            },
+            {
+                logo: '/assets/img/our-partners/our_partners_icon_2.svg',
+                name: 'ЗИКО',
+                descr: 'Предлагают комплексные решения для гофропредприятий'
+            },
+            {
+                logo: '/assets/img/our-partners/our_partners_icon_3.svg',
+                name: 'Elma CRM',
+                descr: 'Мы создаём инструменты для лёгкого перехода к цифровой компании'
+            },
+            {
+                logo: '/assets/img/our-partners/our_partners_icon_4.svg',
+                name: 'ЦСР',
+                descr: 'Некоммерческая организация, аналитический центр'
+            }
+        ] %}
+
+        <div class="our_partners__slider_block">
+
+            <div class="our_partners__slider swiper">
+                <div class="our_partners__wrapper swiper-wrapper">
+
+                    {% for item in partners_data %}
+
+                        <div class="our_partners__slide swiper-slide">
+                            <div class="our_partners__icon">
+                                <img src="{{ item.logo }}" alt="Логотип компании + {{ item.name }}"/>
+                            </div>
+
+
+                            <div class="our_partners__info">
+                                <p class="our_partners__name">{{ item.name }}</p>
+                                <p class="our_partners__descr">{{ item.descr }}</p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+            <div class="our_partners__progressbar"></div>
+        </div>
+
+
+    </div>
+</section>

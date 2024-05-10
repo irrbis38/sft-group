@@ -1,0 +1,158 @@
+// ==============================
+// ==== GAINS ====
+// ==============================
+
+.gains__container {
+    border-radius: var(--border-radius, 23px);
+    overflow: hidden;
+
+    @include media(max, tablet) {
+        border-radius: 0;
+        padding-bottom: 60px;
+        border-bottom: 1px solid rgba(152, 164, 174, 0.5);
+    }
+}
+
+.gains__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #cca075;
+
+    background-image: url("../img/gains/gains-bg.jpg");
+    background-image: -webkit-image-set(
+        url("../img/gains/gains-bg@2x.webp") type("image/webp") 2x,
+        url("../img/gains/gains-bg.webp") type("image/webp") 1x,
+        url("../img/gains/gains-bg@2x.jpg") 2x,
+        url("../img/gains/gains-bg.jpg") 1x
+    );
+    background-image: image-set(
+        url("../img/gains/gains-bg@2x.webp") type("image/webp") 2x,
+        url("../img/gains/gains-bg.webp") type("image/webp") 1x,
+        url("../img/gains/gains-bg@2x.jpg") 2x,
+        url("../img/gains/gains-bg.jpg") 1x
+    );
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include media(max, desktop) {
+        background-image: url("../img/gains/gains-bg-tablet.jpg");
+        background-image: -webkit-image-set(
+            url("../img/gains/gains-bg-tablet@2x.webp") type("image/webp") 2x,
+            url("../img/gains/gains-bg-tablet.webp") type("image/webp") 1x,
+            url("../img/gains/gains-bg-tablet@2x.jpg") 2x,
+            url("../img/gains/gains-bg-tablet.jpg") 1x
+        );
+        background-image: image-set(
+            url("../img/gains/gains-bg-tablet@2x.webp") type("image/webp") 2x,
+            url("../img/gains/gains-bg-tablet.webp") type("image/webp") 1x,
+            url("../img/gains/gains-bg-tablet@2x.jpg") 2x,
+            url("../img/gains/gains-bg-tablet.jpg") 1x
+        );
+    }
+
+    @include media(max, tablet) {
+        // display: flex;
+        background-image: unset;
+        background-color: transparent;
+    }
+}
+
+.gains__item {
+    min-height: 420px;
+    padding: 50px 50px 70px 50px;
+
+    &:not(:last-child) {
+        border-right: 1px solid var(--color-white, #fff);
+    }
+
+    @include media(max, desktop) {
+        min-height: 270px;
+        padding: 30px;
+    }
+
+    @include media(max, tablet) {
+        padding: 40px;
+        background-color: #cca075;
+        background-image: url("../img/gains/gains-bg-mobile.jpg");
+        background-image: -webkit-image-set(
+            url("../img/gains/gains-bg-mobile@2x.webp") type("image/webp") 2x,
+            url("../img/gains/gains-bg-mobile.webp") type("image/webp") 1x,
+            url("../img/gains/gains-bg-mobile@2x.jpg") 2x,
+            url("../img/gains/gains-bg-mobile.jpg") 1x
+        );
+        background-image: image-set(
+            url("../img/gains/gains-bg-mobile@2x.webp") type("image/webp") 2x,
+            url("../img/gains/gains-bg-mobile.webp") type("image/webp") 1x,
+            url("../img/gains/gains-bg-mobile@2x.jpg") 2x,
+            url("../img/gains/gains-bg-mobile.jpg") 1x
+        );
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: var(--border-radius, 23px);
+        overflow: hidden;
+
+        &:not(:last-child) {
+            border-right: none;
+        }
+    }
+}
+
+.gains__num,
+.gains__text {
+    display: block;
+}
+
+.gains__num {
+    margin-bottom: 200px;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 120%;
+    color: var(--color-white, #fff);
+
+    @include media(max, desktop) {
+        margin-bottom: 124px;
+    }
+}
+
+.gains__text {
+    max-width: 250px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    color: var(--color-white, #fff);
+
+    @include media(max, desktop) {
+        max-width: 183px;
+        font-size: 14px;
+        line-height: 157%;
+    }
+
+    @include media(max, tablet) {
+        font-size: 16px;
+        line-height: 150%;
+    }
+}
+
+.gains__pagination {
+    display: none;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    .swiper-pagination-bullet {
+        width: 7px;
+        height: 7px;
+        background-color: var(--color-grey, #98a4ae);
+        transition: background-color 0.2s ease-out;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: var(--color-green, #18984e);
+    }
+
+    @include media(max, tablet) {
+        display: flex;
+    }
+}

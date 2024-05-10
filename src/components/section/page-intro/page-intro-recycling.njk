@@ -1,0 +1,57 @@
+{% from "components/media/image.njk" import image %}
+
+{% macro pageIntroRecycling(
+    class,
+    text,
+    title,
+    imgFull,
+    imgTablet
+) %}
+
+    <section class="page_intro section {{ class }}">
+        <div class="page_intro__bg">
+            {{ image(
+                imgFull,
+                ext = 'jpg',
+                adaptive = [{
+                    breakpoint: 'tablet',
+                    src: imgTablet,
+                    ext: 'jpg'
+                }],
+                width = '1440',
+                height = '800'
+            ) }}
+        </div>
+        <div class="container">
+
+            <div class="page_intro__card glassy-card">
+
+                <div class="page_intro__card_wrapper glassy-card__wrapper">
+
+                    <div class="page_intro__icon"></div>
+
+                    <div class="page_intro__text">
+                        {{ text }}
+                    </div>
+
+                </div>
+
+            </div>
+
+            <h1 class="page_intro__title">{{ title }}</h1>
+
+
+        </div>
+
+        <div class="container page_intro__container">
+            <ul class="page_intro__tabs" data-tabs>
+                <li class="page_intro__tab">
+                    <a href="#recycle-paper" class="btn page_intro__link" data-tabby-default>Сдать макулатуру</a>
+                </li>
+                <li class="page_intro__tab">
+                    <a href="#buy-paper" class="btn page_intro__link">Купить макулатуру</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+{% endmacro %}

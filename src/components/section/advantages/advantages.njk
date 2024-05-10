@@ -1,0 +1,167 @@
+{% from "components/media/image.njk" import image %}
+
+<section class="advantages section">
+    <div class="container advantages__container">
+
+        <h2 class="advantages__title">Преимущества<br/>работы с СФТ Групп</h2>
+
+        <div class="advantages__wrapper">
+            <div class="advantages__bg">
+
+                <div class="advantages__box">
+                    {{ image(
+                        '/assets/img/advantages/advantages_box',
+                        ext = 'png',
+                        adaptive = [{
+                            breakpoint: 'tablet',
+                            src: '/assets/img/advantages/advantages_box_tablet',
+                            ext: 'png'
+                        }],
+                        width = '597',
+                        height = '386'
+                    ) }}
+                </div>
+
+                <div class="advantages__roll">
+                    {{ image(
+                        '/assets/img/advantages/advantages_roll',
+                        ext = 'png',
+                        adaptive = [{
+                            breakpoint: 'tablet',
+                            src: '/assets/img/advantages/advantages_roll_tablet',
+                            ext: 'png'
+                        }],
+                        width = '440',
+                        height = '473'
+                    ) }}
+                </div>
+
+                <div class="advantages_ball">
+                    {{ image(
+                        '/assets/img/advantages/advantages_ball',
+                        ext = 'png',
+                        adaptive = [{
+                            breakpoint: 'tablet',
+                            src: '/assets/img/advantages/advantages_ball_tablet',
+                            ext: 'png'
+                        }],
+                        width = '563',
+                        height = '439'
+                    ) }}
+                </div>
+
+
+                <div class="advantages__gradient"></div>
+
+            </div>
+
+            <div class="advantages__list">
+
+                {% set advantages_data_l = [
+                        {
+                            header: 'Сервис на всех этапах',
+                            value: 'all_stages_services'
+                        },
+                        {
+                            header: 'Индивидуальный менеджер',
+                            value: 'individual_manager'
+                        },
+                        {
+                            header: 'Совместное тестирование',
+                            value: 'joint_testing'
+                        }
+                    ] %}
+
+                {% set advantages_data_r = [
+                        {
+                            header: 'Онлайн-портал доступ 24/7',
+                            value: 'access_24_7'
+                        },
+                        {
+                            header: 'Уменьшение срока поставки',
+                            value: 'reduced_delivery_time'
+                        },
+                        {
+                            header: 'Индивидуальный подход',
+                            value: 'individual_approach'
+                        }
+                    ] %}
+
+                <filedset class="advantages__group advantages__group_left">
+
+                    {% for item in advantages_data_l %}
+
+                        <div class="advantages__item">
+                            <p class="advantages__header">{{ item.header }}</p>
+                            <div class="advantages__descr">
+                                <p class="advantages__inner">От предварительной заявки до обратной связи после получения и использования нашей продукции, а также со следующим заказом — на каждом шаге мы стремимся
+                                    сделать сотрудничество комфортным и прозрачным для наших клиентов</p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </filedset>
+
+                <fieldset class="advantages__group advantages__group_right">
+
+
+                    {% for item in advantages_data_r %}
+
+                        <div class="advantages__item">
+                            <p class="advantages__header">{{ item.header }}</p>
+                            <div class="advantages__descr">
+                                <p class="advantages__inner">От предварительной заявки до обратной связи после получения и использования нашей продукции, а также со следующим заказом — на каждом шаге мы стремимся
+                                    сделать сотрудничество комфортным и прозрачным для наших клиентов</p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </fieldset>
+
+            </div>
+        </div>
+
+        <div class="advantages__slogan">
+
+            <span class="advantages__text_line">За людей
+                {{ image(
+                        '/assets/img/advantages/slogan_1',
+                        ext = 'png',
+                        width = '456',
+                        height = '100'
+                    ) }}
+            </span>
+
+            <span class="advantages__text_line">которые реализуют ваши</span>
+
+            <span class="advantages__text_line">
+                {{ image(
+                    '/assets/img/advantages/slogan_2',
+                    ext = 'png',
+                    width = '160',
+                    height = '100'
+                ) }}
+                универсальные или
+            </span>
+
+            <span class="advantages__text_line">
+                нестандартные
+                {{ image(
+                    '/assets/img/advantages/slogan_3',
+                    ext = 'png',
+                    width = '160',
+                    height = '100'
+                ) }}
+                решения
+            </span>
+
+            <a href="#" class="advantages__more btn btn_orange">Узнать больше о нас</a>
+        </div>
+
+        <div class="block_with_bottom_line"></div>
+
+
+    </div>
+</section>

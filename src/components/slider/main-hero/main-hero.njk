@@ -1,0 +1,65 @@
+{% from "components/media/image.njk" import image %}
+
+<section class="main-hero">      
+    <div class="main-hero__slider swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="main-hero-slide">
+                    <div class="container">
+                        <div class="main-hero-slide__content">
+                            <div class="main-hero-slide__text">
+                                <span class="h1">Упаковочная компания замкнутого цикла</span>
+                            </div>
+                        </div>
+                    </div>
+                    {{ image(
+                        src = '/assets/img/slider/main-hero/1',
+                        ext = 'jpg',
+                        adaptive = [{
+                            breakpoint: 'tablet',
+                            src: '/assets/img/slider/main-hero/1-t',
+                            ext: 'jpg'
+                        },{
+                            breakpoint: 'mobile',
+                            src: '/assets/img/slider/main-hero/1-m',
+                            ext: 'jpg'
+                        }],
+                        width = '1440',
+                        height = '1000',
+                        isBackground = true
+                    ) }}
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="main-hero-slide">
+                    <div class="container">
+                        <div class="main-hero-slide__content">
+                            <div class="main-hero-slide__text">
+                                <span class="h1">Упаковочная компания замкнутого цикла</span>
+                            </div>
+                        </div>
+                    </div>
+                    {{ image(
+                        src = '/assets/img/slider/main-hero/1',
+                        ext = 'jpg',
+                        adaptive = [{
+                            breakpoint: 'tablet',
+                            src: '/assets/img/slider/main-hero/1-t',
+                            ext: 'jpg'
+                        },{
+                            breakpoint: 'mobile',
+                            src: '/assets/img/slider/main-hero/1-m',
+                            ext: 'jpg'
+                        }],
+                        width = '1440',
+                        height = '1000',
+                        isBackground = true
+                    ) }}
+                </div>
+            </div>
+        </div>
+        <div class="swiper-buttons-static container">
+            <div class="swiper-button-primary swiper-button-prev"></div>
+            <div class="swiper-button-primary swiper-button-next"></div>
+        </div>
+</section>

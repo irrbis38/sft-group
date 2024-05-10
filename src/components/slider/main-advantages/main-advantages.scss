@@ -1,0 +1,250 @@
+.main-advantages {
+    @include media(max, desktop) {
+        margin-top: 25px;
+    }
+
+    &__slider {
+        background-color: var(--color-green);
+        height: 530px;
+
+
+        @include media(min, tablet) {
+            height: auto;
+
+            .swiper-wrapper {
+                width: 100% !important;
+                flex-direction: unset !important;
+                transform: unset !important;
+                transition-delay: unset !important;
+            }
+            .swiper-pagination {
+                display: none;
+            }
+
+            .swiper-slide {
+                height: unset !important;
+            }
+        }
+
+        @include media(min, tablet) {
+            @include media(max, desktop) {
+                .swiper-slide {
+                    width: calc(50% - 1px) !important;
+                    border-style: solid;
+                    border-color: rgba($color: #fff, $alpha: .4);
+                    border-width: 0px;
+
+                    &:nth-child(1) {
+                        border-width: 0 1px 1px 0;
+                    }
+
+                    &:nth-child(2) {
+                        border-width: 0 0 1px 0;
+                    }
+
+                    &:nth-child(3) {
+                        border-width: 0 1px 0 0;
+                    }
+                }
+            }
+        }
+        
+        @include media(min, desktop) {
+            margin-top: -75px;
+            -webkit-clip-path: url('#main-advantages-section-clip-path');
+            clip-path: url('#main-advantages-section-clip-path');
+            
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('../img/slider/main-advantages/bg@2x.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .swiper-slide {
+                width: 25% !important;
+            
+                &:not(:last-child) {
+                    border-right: 1px solid transparent;
+                    border-color: rgba($color: #fff, $alpha: .4);
+                }
+
+            }
+        }
+
+        @include media(max, desktop) {
+            border-radius: var(--border-radius);
+
+            .swiper-wrapper::after {
+                content: '';
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('data:image/svg+xml,<svg width="718" height="540" viewBox="0 0 718 540" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(%23filter0_f_1953_6869)"><ellipse cx="522" cy="391.5" rx="522" ry="391.5" transform="matrix(-1 -8.74228e-08 -8.74228e-08 1 1263 -360)" fill="url(%23paint0_linear_1953_6869)"/></g><defs><filter id="filter0_f_1953_6869" x="-69.8158" y="-648.816" width="1621.63" height="1360.63" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur stdDeviation="144.408" result="effect1_foregroundBlur_1953_6869"/></filter><linearGradient id="paint0_linear_1953_6869" x1="88.5172" y1="589.188" x2="859.547" y2="4.23568" gradientUnits="userSpaceOnUse"><stop offset="0.0104167" stop-color="%2349A071"/><stop offset="1" stop-color="%23B0EE00"/></linearGradient></defs></svg>');
+                background-size: cover;
+                z-index: -1;
+            }
+        }
+
+        @include media(max, tablet) {
+            .swiper-slide:nth-child(even)::before {
+                content: '';
+                position: absolute;
+                left: 40px;
+                right: 40px;
+                height: 1px;
+                background-color: rgba($color: #fff, $alpha: .4);
+            }
+
+            .swiper-wrapper::after {
+                width: 1115px;
+                height: 981px;
+                left: calc(50% - 1115px / 2);
+                top: calc(50% - 981px / 2);
+                background-image: url('data:image/svg+xml,<svg width="1115" height="981" viewBox="0 0 1115 981" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(%23filter0_f_1184_1500)"><ellipse cx="268.5" cy="201.5" rx="268.5" ry="201.5" transform="matrix(-1 -8.74228e-08 -8.74228e-08 1 826 289)" fill="url(%23paint0_linear_1184_1500)"/></g><defs><filter id="filter0_f_1184_1500" x="0.184204" y="0.184204" width="1114.63" height="980.632" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur stdDeviation="144.408" result="effect1_foregroundBlur_1184_1500"/></filter><linearGradient id="paint0_linear_1184_1500" x1="45.5304" y1="303.247" x2="442.303" y2="2.41719" gradientUnits="userSpaceOnUse"><stop offset="0.0104167" stop-color="%2349A071"/><stop offset="1" stop-color="%23B0EE00"/></linearGradient></defs></svg>');
+            }
+        }
+
+        .swiper-pagination {
+            bottom: 25px;
+            @include media(min, tablet) {
+                display: none !important;
+            }
+        }
+    }
+}
+
+.main-advantages-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--color-white);
+    height: 100%;
+    padding: 151px 50px 50px;
+    transition: all .2s ease;
+
+    &:hover {
+        background-color: var(--color-green);
+        text-decoration: none;
+    }
+
+    @include media(max, desktop) {
+        padding: 30px;
+    }
+
+    @include media(max, tablet) {
+        padding: 40px;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .icon {
+        margin-bottom: 258px;
+
+        @include media(max, desktop) {
+            margin-bottom: 65px;
+        }
+
+        @include media(max, tablet) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 20px;
+        margin-bottom: 20px;
+
+        @include media(max, desktop) {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__descr {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+.about-advantages .main-advantages__slider {
+    clip-path: unset;
+    border-radius: var(--border-radius);
+    margin-top: 0;
+
+    &::before {
+        position: absolute;
+        width: 1044px;
+        height: 783px;
+        left: 15.7%;
+        bottom: -8%;
+
+        background: linear-gradient(60.36deg, #49A071 15.15%, #B0EE00 88.54%);
+        filter: blur(144.408px);
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+
+        @include media(max, desktop) {
+            display: none;
+        }
+    }
+}
+
+.about-advantages-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    position: relative;
+    color: var(--color-white);
+
+    @include media(min, desktop) {
+        &:hover {
+        
+            .about-advantages-card__bg {
+                opacity: 1;
+            }
+            
+            .about-advantages-card__descr {
+                color: var(--color-black);
+            }
+        }
+    }
+
+    @include media(max, desktop) {
+        padding: 40px;
+    }
+
+    &__bg {
+        opacity: 0;
+        transition: all .2s ease;
+    }
+
+    &__title {
+        font-size: 25px;
+        margin-bottom: 310px;
+
+        @include media(max, desktop) {
+            margin-bottom: 77.5px;
+        }
+
+        @include media(max, tablet) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__descr {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}

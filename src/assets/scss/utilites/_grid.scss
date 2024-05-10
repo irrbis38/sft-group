@@ -1,0 +1,29 @@
+@include grid(12, 3, 8px);
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--container-gutter-x);
+
+    @include media(max, desktop) {
+        padding: 0 var(--container-t-gutter-x);
+    }
+
+    @include media(max, tablet) {
+        padding: 0 var(--container-m-gutter-x);
+    }
+}
+
+.container-fluid {
+    width: 100%;
+    padding: 0 var(--container-gutter-x);
+
+    @include media(max, desktop) {
+        padding: 0 var(--container-t-gutter-x);
+    }
+
+    @include media(max, tablet) {
+        padding: 0 var(--container-m-gutter-x);
+    }
+}

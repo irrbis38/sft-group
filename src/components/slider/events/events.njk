@@ -1,0 +1,21 @@
+{% from "components/card/event/event.njk" import eventCard %}
+
+<div class="events-slider swiper">
+    <div class="events-slider__head">
+        <h3 class="events-slider__title h3">
+            Календарь <br>
+            мероприятий
+        </h3>
+        <div class="swiper-buttons-static">
+            <div class="swiper-button-default swiper-button-prev"></div>
+            <div class="swiper-button-default swiper-button-next"></div>
+        </div>
+    </div>
+    <div class="swiper-wrapper">
+        {% for item in range(8) %}
+            <div class="swiper-slide">
+                {{ eventCard() }}
+            </div>
+        {% endfor %}
+    </div>
+</div>

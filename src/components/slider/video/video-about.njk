@@ -1,0 +1,98 @@
+{% from "components/card/video/video.njk" import videoCard %}
+
+{% set videoList = [
+    {
+        title: 'СФТ Групп: мы такие разные',
+        preview: {
+            src: '/assets/img/about/video/1',
+            ext: 'jpg'
+        },
+        src: 'https://vk.com/video_ext.php?oid=-132591577&id=456239161&hd=2',
+        type: 'iframe'
+    },
+    {
+        title: 'SFT Group. Ролик о нашей компании',
+        preview: {
+            src: '/assets/img/about/video/2',
+            ext: 'jpg'
+        },
+        src: 'https://youtu.be/B1k1ziP4bkg',
+        type: 'youtube'
+    },
+    {
+        title: 'СФТ Групп: мы такие разные',
+        preview: {
+            src: '/assets/img/about/video/3',
+            ext: 'jpg'
+        },
+        src: '/assets/video/sft.mp4',
+        type: 'html5video'
+    },
+    {
+        title: 'СФТ Групп: мы такие разные',
+        preview: {
+            src: '/assets/img/about/video/1',
+            ext: 'jpg'
+        },
+        src: 'https://vk.com/video_ext.php?oid=-132591577&id=456239161&hd=2',
+        type: 'iframe'
+    },
+    {
+        title: 'SFT Group. Ролик о нашей компании',
+        preview: {
+            src: '/assets/img/about/video/2',
+            ext: 'jpg'
+        },
+        src: 'https://youtu.be/B1k1ziP4bkg',
+        type: 'youtube'
+    },
+    {
+        title: 'СФТ Групп: мы такие разные',
+        preview: {
+            src: '/assets/img/about/video/3',
+            ext: 'jpg'
+        },
+        src: '/assets/video/sft.mp4',
+        type: 'html5video'
+    }
+] %}
+
+<section class="about-video section">
+    <div class="container">
+        <div class="about-video__flex">
+            <div class="about-video__head">
+                <span class="pretitle">Корпоративная жизнь</span>
+                <h2 class="h2">
+                    Видео о нашей <br>
+                    жизни
+                </h2>
+            </div>
+            <div class="we-in-socials">
+                <span class="we-in-socials__text">Мы в соцсетях</span>
+                <a href="#" class="we-in-socials__link we-in-socials__link_vk"></a>
+                <a href="#" class="we-in-socials__link we-in-socials__link_tg"></a>
+            </div>
+            <div class="video-slider swiper">
+                <div class="video-slider__head">
+                    <div class="swiper-buttons-static">
+                        <div class="swiper-button-default swiper-button-default_white swiper-button-prev"></div>
+                        <div class="swiper-button-default swiper-button-default_white swiper-button-next"></div>
+                    </div>
+                </div>
+                <div class="swiper-wrapper">
+                    {% for video in videoList %}
+                        <div class="swiper-slide">
+                            {{ videoCard(
+                                color = 'white',
+                                title = video.title,
+                                preview = video.preview,
+                                src = video.src,
+                                type = video.type
+                            ) }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

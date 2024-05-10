@@ -1,0 +1,87 @@
+{% extends "layouts/modal.njk" %}
+
+{% from "components/form/input/input.njk" import inputItem %}
+{% from "components/form/select/select.njk" import selectItem %}
+{% from "components/form/file/file.njk" import fileUploader %}
+
+{% set modal_id = 'modal-resume' %}
+{% set isAside = true %}
+{% set modalSize = 'small' %}
+
+{% block content %}
+    <form class="modal-form" action="#">
+        <span class="modal-form__title h3">Отправить резюме</span>
+        <div class="modal-form__field-group">
+            <div class="modal-form__field">
+                {{ selectItem(
+                    color = 'dark',
+                    options = [{
+                        label: 'Выбрать регион',
+                        value: 'default-hide',
+                        selected: true
+                    },{
+                        label: 'Москва',
+                        value: 'Москва',
+                        selected: false
+                    },{
+                        label: 'Московская область',
+                        value: 'Московская область',
+                        selected: false
+                    },{
+                        label: 'Санкт-Петербург',
+                        value: 'Санкт-Петербург',
+                        selected: false
+                    }]
+                ) }}
+            </div>
+            <div class="modal-form__field">
+                {{ selectItem(
+                    color = 'dark',
+                    options = [{
+                        label: 'Выбрать вакансию',
+                        value: 'default-hide',
+                        selected: true
+                    },{
+                        label: 'Front-end Developer',
+                        value: 'Front-end Developer',
+                        selected: false
+                    },{
+                        label: 'Design Developer',
+                        value: 'Design Developer',
+                        selected: false
+                    },{
+                        label: 'Back-end Developer',
+                        value: 'Back-end Developer',
+                        selected: false
+                    }]
+                ) }}
+            </div>
+            <div class="modal-form__field">
+                {{ inputItem(
+                    placeholder = 'Имя',
+                    color = 'dark'
+                ) }}
+            </div>
+            <div class="modal-form__field">
+                {{ inputItem(
+                    placeholder = 'Телефон',
+                    color = 'dark'
+                ) }}
+            </div>
+            <div class="modal-form__field">
+                {{ inputItem(
+                    placeholder = 'Email',
+                    color = 'dark'
+                ) }}
+            </div>
+            <div class="modal-form__field">
+                {{ fileUploader(text = 'Прикрепить резюме') }}
+            </div>
+        </div>
+        <button class="modal-form__submit btn btn_green" type="submit">Отправить</button>
+        <span class="modal-form__policy">
+            Нажимая кнопку, Вы даете информированное согласие <br>
+            на обработку своих персональных данных
+        </span>
+    </form>
+{% endblock %}

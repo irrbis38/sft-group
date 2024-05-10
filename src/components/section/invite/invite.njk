@@ -1,0 +1,83 @@
+<section class="invite section" id="next-section">
+    <div class="container invite__container">
+
+        <h2 class="invite__title">Приглашаем к сотрудничеству по следующим направлениям</h2>
+
+        {% set invite_data = [
+            {
+                name: 'Сервисный оператор вторичного сырья',
+                src: "1"
+            },
+            {
+                name: 'Комплексная утилизация отходов',
+                src: "2"
+            },
+            {
+                name: 'Аккредитованный утилизатор РОП',
+                src: "3"
+            },
+            {
+                name: 'Проектирование упаковочных решений',
+                src: "4"
+            },
+            {
+                name: 'Логистические услуги',
+                src: "5"
+            },
+            {
+                name: 'Научно-исследовательские и опытно-конструкторские работы',
+                src: "6"
+            },
+            {
+                name: 'Разработка дизайна',
+                src: "7"
+            },
+            {
+                name: 'Гарантирующий поставщик тарных картонов',
+                src: "8"
+            },
+            {
+                name: 'Аккредитованный лабораторный комплекс',
+                src: "9"
+            },
+            {
+                name: 'Экологические социально-просветительские проекты',
+                src: "10"
+            },
+            {
+                name: 'Технологический партнер',
+                src: "11"
+            },
+            {
+                name: 'Предложить свой вариант партнерства',
+                src: "12"
+            }
+        ] %}
+
+
+        <ul class="invite__content">
+
+            {% for item in invite_data %}
+
+                <li class="invite__item">
+
+                    <p class="invite__name">{{ item.name }}</p>
+
+                    <div class="invite__bottom">
+                        <button class="invite__btn">Сотрудничество</button>
+
+                        {% include "components/section/invite/icons/invite_icon_" + item.src + ".svg" %}
+                    </div>
+                </li>
+
+            {% endfor %}
+
+
+        </ul>
+
+        <button class="invite__load_more btn btn_green">Загрузить ещё</button>
+
+        <a href="#contact-us" class="invite__link btn btn_orange">Стать партнёром</a>
+
+    </div>
+</section>

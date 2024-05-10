@@ -1,0 +1,22 @@
+{% from "components/media/image.njk" import image %}
+
+{% macro bannerSlider(slides = []) %}
+    <div class="banner-slider swiper">
+        <div class="swiper-wrapper">
+            {% for item in slides %}
+                <div class="swiper-slide">
+                    {{ image(
+                        src = item.src,
+                        ext = item.ext,
+                        width = '1392',
+                        height = '580'
+                    ) }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-buttons-static">
+            <div class="swiper-button-secondary swiper-button-prev"></div>
+            <div class="swiper-button-secondary swiper-button-next"></div>
+        </div>
+    </div>
+{% endmacro %}

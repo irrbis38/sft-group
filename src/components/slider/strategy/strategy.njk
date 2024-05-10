@@ -1,0 +1,53 @@
+{% set strategyList = [
+    {
+        icon: '/assets/img/about/strategy/airdrop.svg',
+        title: 'Цифровизация',
+        descr: 'Онлайн-продажи изменили рынок. Наша цель — обеспечить интернет-коммерцию упаковкой из гофрокартона и к 2030 году увеличить свою долю в этой сфере до 50 %.'
+    },{
+        icon: '/assets/img/about/strategy/recycle.svg',
+        title: 'Ресайклинг',
+        descr: 'Компания SFT Recycling — крупнейший европейский оператор, перерабатывающий разные виды вторсырья (макулатура, картон, полимерные пленки).'
+    },{
+        icon: '/assets/img/about/strategy/status-up.svg',
+        title: 'Сервисная <br /> экономика',
+        descr: 'Сервисы для партнеров собраны в единую экосистему решений, благодаря чему взаимодействие выгодно и максимально комфортно.'
+    },{
+        icon: '/assets/img/about/strategy/global.svg',
+        title: 'Новая <br /> геополитика',
+        descr: 'Мы развиваем новые направления логистики и международного сотрудничества, понимая и учитывая национальные интересы и особенности менталитета иностранных партнеров.'
+    },{
+        icon: '/assets/img/about/strategy/linear.svg',
+        title: 'Забота <br /> об экологии',
+        descr: 'Максимально эффективная переработка вторсырья и его использование при изготовлении упаковки, замена пластика более экологичным гофрокартоном.'
+    } 
+] %}
+
+
+<section class="section-strategy section">
+    <div class="container">
+        <div class="section-strategy__flex">
+            <div class="section-strategy__head">
+                <span class="pretitle">Стратегия</span>
+                <h2 class="semi-title">
+                    Как мы реагируем на тренды. Эффективно прогнозируем запросы наших покупателей <br> и партнеров
+                </h2>
+            </div>
+            <div class="section-strategy__slider swiper">
+                <div class="swiper-wrapper">
+                    {% for item in strategyList %}
+                    <div class="swiper-slide">
+                        <div class="strategy-card">
+                            <div class="strategy-card__icon">
+                                <img src="{{ item.icon }}" alt="Иконка">
+                            </div>
+                            <span class="strategy-card__title">{{ item.title | safe }}</span>
+                            <p class="strategy-card__descr">{{ item.descr }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</section>

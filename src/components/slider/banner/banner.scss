@@ -1,0 +1,22 @@
+.banner-slider {
+    border-radius: var(--border-radius);
+
+    picture {
+        display: flex;
+    
+        img {
+            object-fit: cover;
+        }
+    }
+    
+    .swiper-buttons-static {
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+
+        @include media(max, desktop) {
+            right: 15px;
+            bottom: 15px;
+        }
+    }
+}

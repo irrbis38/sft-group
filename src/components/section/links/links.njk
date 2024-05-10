@@ -1,0 +1,50 @@
+{% from "components/media/image.njk" import image %}
+
+{% macro linksSection(
+    links_data
+) %}
+
+
+    <div class="links section">
+        <div class="container links__container">
+
+            {% for item in links_data %}
+
+
+                <div class="links__item">
+
+                    <div class="links__bg">
+
+
+                        {{ image(
+                            item.imgFull,
+                            ext = 'jpg',
+                            adaptive = [{
+                                breakpoint: 'tablet',
+                                src: item.imgTablet,
+                                ext: 'jpg'
+                            }],
+                            width = '693',
+                            height = '700'
+                        ) }}
+
+                    </div>
+
+                    <div class="links__content">
+                        <div class="links__descr">
+                            <p class="links__title">{{ item.title }}</p>
+
+                            <p class="links__subtitle">Сырье для производства гофротары — картон для плоских слоев (лайнер) и бумага для гофрирования (флютинг)</p>
+                        </div>
+
+
+                        <a href="#" class="links__more btn btn_white">Узнать больше</a>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endmacro %}

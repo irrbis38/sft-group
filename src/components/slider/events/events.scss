@@ -1,0 +1,32 @@
+.events-slider {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background-color: var(--color-grey1);
+    border-radius: var(--border-radius);
+
+    min-height: 395px;
+
+    @include media(max, desktop) {
+        padding: 30px 30px 40px;
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: auto;
+    }
+
+    &__title {
+        @include media(max, desktop) {
+            font-size: 20px;
+            line-height: 28px;
+        }
+    }
+    
+    .swiper-wrapper {
+        flex: 0;
+    }
+}

@@ -1,0 +1,85 @@
+// Global
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "animation";
+@import "reset";
+@import "utilites";
+@import "global";
+
+// Components
+@import "components/header/header";
+@import "components/footer/footer";
+
+// Components | Card
+@import "components/card/news/news";
+@import "components/card/event/event";
+@import "components/card/review/review";
+@import "components/card/video/video";
+@import "components/card/innovation/innovation";
+
+// Components | Tabs
+@import "components/tabs/tabs";
+@import "components/tabs/cooperation/cooperation";
+
+// Components | Slider
+@import "components/slider/slider";
+@import "components/slider/main-hero/main-hero";
+@import "components/slider/main-advantages/main-advantages";
+@import "components/slider/news/news";
+@import "components/slider/events/events";
+@import "components/slider/reviews/reviews";
+@import "components/slider/partners/partners";
+@import "components/slider/video/video";
+@import "components/slider/innovation/innovation";
+@import "components/slider/team/team";
+@import "components/slider/detail/detail";
+@import "components/slider/strategy/strategy";
+@import "components/slider/current-projects/current-projects";
+@import "components/slider/our-partners/our-partners";
+@import "components/slider/possibilities/possibilities";
+@import "components/slider/banner/banner";
+@import "components/slider/about-partners/about-partners";
+
+// Components | Section
+@import "components/section/analytics-graph/analytics-graph";
+@import "components/section/news/news";
+@import "components/section/contact-us/contact-us";
+@import "components/section/innovation/innovation";
+@import "components/section/page-intro/page-intro";
+@import "components/section/assortment/assortment";
+@import "components/section/table/table";
+@import "components/section/branches/branches";
+@import "components/section/sertificates/sertificates";
+@import "components/section/benefits/benefits";
+@import "components/section/links/links";
+@import "components/section/description/description";
+@import "components/section/suitable-for/suitable-for";
+@import "components/section/geography/geography";
+@import "components/section/cycle/cycle";
+@import "components/section/variety/variety";
+@import "components/section/divisions/divisions";
+@import "components/section/fleet/fleet";
+@import "components/section/invite/invite";
+@import "components/section/advantages/advantages";
+
+// Components | Form
+@import "components/form/select/select";
+@import "components/form/input/input";
+@import "components/form/file/file";
+
+// Components | Modal
+@import 'components/modal/modal';
+@import 'components/modal/about-detail/about-detail';
+@import 'components/modal/review-detail/review-detail';
+
+// Pages
+@import "assets/scss/pages/main";
+@import "assets/scss/pages/ui";
+@import "assets/scss/pages/gofroupakovka";
+@import "assets/scss/pages/carton";
+@import "assets/scss/pages/not-found-page";
+@import "assets/scss/pages/recycling";
+@import "assets/scss/pages/contacts";
+@import "assets/scss/pages/partnership";
+@import "assets/scss/pages/about";

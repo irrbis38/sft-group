@@ -1,0 +1,91 @@
+{% from "components/media/image.njk" import image %}
+
+{% set mainMenu = [{
+    name: 'О компании',
+    url: '#'
+},{
+    name: 'Гофроупаковка',
+    url: '#'
+},{
+    name: 'Тарный картон',
+    url: '#'
+},{
+    name: 'Ресайклинг',
+    url: '#'
+},{
+    name: 'Проекты и партнерство',
+    url: '#'
+},{
+    name: 'Контакты',
+    url: '#'
+}] %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <meta name="robots" content="noindex, nofollow"/>
+
+        <link rel="stylesheet" href="/assets/css/libs.min.css">
+        <link rel="stylesheet" href="/assets/css/sprite.css">
+        <link rel="stylesheet" href="/assets/css/app.css">
+        <title>
+            SFT Group | 404 - страница не найдена
+        </title>
+    </head>
+    <body class="not-found-page">
+
+        {% include "components/header/header.njk" %}
+
+        <main class="inner-page">
+            <section class="page_intro">
+                <div class="page_intro__bg">
+                    {{ image(
+                        '/assets/img/page-intro/gofro-bg',
+                        ext = 'jpg',
+                        adaptive = [{
+                            breakpoint: 'tablet',
+                            src: '/assets/img/page-intro/gofro-bg-tablet',
+                            ext: 'jpg'
+                        }],
+                        width = '1440',
+                        height = '800'
+                    ) }}
+                </div>
+                <div class="container">
+
+                    <div class="page_intro__card glassy-card">
+
+                        <div class="page_intro__card_wrapper glassy-card__wrapper">
+
+                            <div class="page_intro__icon"></div>
+
+                            <div class="page_intro__text">
+                                Индивидуальный подход, передовые технологии и экологическая ответсвенность
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="page_intro__inner">
+
+                        <h1 class="page_intro__title">
+                            <span>Ошибка 404</span>Страница<br/>не найдена</h1>
+
+                        <div class="page_intro__bottom">
+                            <span class="page_intro__info">Страница которую вы ищите не существует или была удалена</span>
+
+                            <a class="page_intro__to_main btn btn_gradient" href="#">На главную страницу</a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+{% from "components/card/innovation/innovation.njk" import innovationCard %}
+
+{% set innovationList = [
+    {
+        icon: '/assets/img/slider/innovation/1.svg',
+        title: 'Картон окрашенный <br /> в массе'
+    },
+    {
+        icon: '/assets/img/slider/innovation/2.svg',
+        title: 'Жиростойкий <br /> картон'
+    },
+    {
+        icon: '/assets/img/slider/innovation/3.svg',
+        title: 'Основа <br /> для обоев'
+    },
+    {
+        icon: '/assets/img/slider/innovation/4.svg',
+        title: 'Предложить <br /> продукт или идею'
+    },
+    {
+        icon: '/assets/img/slider/innovation/1.svg',
+        title: 'Картон окрашенный <br /> в массе'
+    },
+    {
+        icon: '/assets/img/slider/innovation/2.svg',
+        title: 'Жиростойкий <br /> картон'
+    },
+    {
+        icon: '/assets/img/slider/innovation/3.svg',
+        title: 'Основа <br /> для обоев'
+    },
+    {
+        icon: '/assets/img/slider/innovation/4.svg',
+        title: 'Предложить <br /> продукт или идею'
+    }
+] %}
+
+<div class="innovation-slider swiper">
+    <div class="innovation-slider__head">
+        <span class="innovation-slider__title">
+            Перечень наших инновационных продуктов
+        </span>
+        <div class="swiper-buttons-static">
+            <div class="swiper-button-default swiper-button-default_white swiper-button-prev"></div>
+            <div class="swiper-button-default swiper-button-default_white swiper-button-next"></div>
+        </div>
+    </div>
+    <div class="swiper-wrapper">
+        {% for item in innovationList %}
+            <div class="swiper-slide">
+                {{ innovationCard(
+                    icon = item.icon,
+                    title = item.title
+                ) }}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="swiper-scrollbar"></div>
+</div>

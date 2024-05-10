@@ -1,0 +1,11 @@
+{% macro eventCard(
+    date = '12 декабря',
+    address = 'Москва, Большая Бронная ул., 27/4',
+    descr = 'Используя все созданные нами ресурсы, мы уверены, что сможем разработать для вас упаковку, которая будет более эффективной'
+) %}
+    <div class="event-card">
+        <p class="event-card__date event-card__tag">{{ date }}</p>
+        <p class="event-card__address event-card__tag">{{ address }}</p>
+        <p class="event-card__descr">{{ descr }}</p>
+    </div>
+{% endmacro %}

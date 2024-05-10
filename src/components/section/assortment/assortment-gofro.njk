@@ -1,0 +1,169 @@
+{% from "components/card/assortment-slide/assortment-slide.njk" import assortmentSlide %}
+
+{% set assortment_list = [
+    {
+        name: 'Овощи и фрукты',
+        value: 'vegetables',
+        isChecked: true
+    },
+    {
+        name: 'Молочная продукция',
+        value: 'milk',
+        isChecked: false
+    },
+    {
+        name: 'Кондитерские изделия',
+        value: 'candy',
+        isChecked: false
+    },
+    {
+        name: 'Алкогольная продукция',
+        value: 'alcohol',
+        isChecked: false
+    },
+    {
+        name: 'Мясная продукция',
+        value: 'meat',
+        isChecked: false
+    },
+    {
+        name: 'Бакалея',
+        value: 'grocery',
+        isChecked: false
+    },
+    {
+        name: 'Товары народного потребления',
+        value: 'consumer',
+        isChecked: false
+    },
+    {
+        name: 'Промышленные товары',
+        value: 'industrial',
+        isChecked: false
+    }
+] %}
+
+
+<section class="assortment section" id="assortment">
+    <div class="container">
+
+        <div class="assortment__top">
+
+            <div class="assortment__descr">
+
+                <h2 class="assortment__title h2">Ассортимент гофропродукции</h2>
+
+                <p class="assortment__subtitle">Мы создаём гофроупаковку любого размера и сложности от 4-клапанных ящиков до упаковки с многоточечной склейкой с многоцветной печатью</p>
+
+            </div>
+
+
+            <div class="assortment__panel">
+
+                <a href="#" class="assortment__download btn btn_grey btn_download_grey" download>Скачать каталог</a>
+
+                <a href="#contact-us" class="assortment__contact btn btn_orange">Связаться с нами</a>
+
+            </div>
+
+        </div>
+
+        <h3 class="assortment__heading">Отрасли</h3>
+
+        <div class="assortment__products assortment-products assortment-products-sliders">
+
+            <div class="assortment__nav assortment-nav">
+
+                <button class="assortment__current assortment-current" data-value="vegetables">Овощи и фрукты</button>
+
+
+                <fieldset class="assortment__fieldset">
+
+                    {% for item in assortment_list %}
+
+                        <label class="assortment__label" data-value="{{ item.value }}">
+
+                            <input type="radio" class="assortment__input visuallyhidden" name="category" value="{{ item.value }}" {% if item.isChecked %} checked {% endif %}/>
+
+                            <span>{{ item.name }}</span>
+
+                        </label>
+
+                    {% endfor %}
+
+                </fieldset>
+            </div>
+
+
+            <div class="assortment__sliders">
+                {% for item in assortment_list %}
+
+
+                    {% if item.isChecked %}
+
+                        <div class="assortment__slider_block active" data-value="{{ item.value }}">
+
+                            <div class="assortment__slider swiper">
+
+                                <div class="assortment__arrows">
+                                    <button class="assortment__prev btn_round btn_prev_grey" aria-label="Показать предыдущий слайд"></button>
+
+                                    <button class="assortment__next btn_round btn_next_grey" aria-label="Показать следующий слайд"></button>
+                                </div>
+
+
+                                <div class="assortment__wrapper swiper-wrapper">
+
+                                    {{ assortmentSlide('/assets/img/assortment/vegetables-1', '/assets/img/assortment/vegetables-1-t', '/assets/img/assortment/vegetables-1-m') }}
+                                    {{ assortmentSlide('/assets/img/assortment/vegetables-2', '/assets/img/assortment/vegetables-2-t', '/assets/img/assortment/vegetables-2-m') }}
+                                    {{ assortmentSlide('/assets/img/assortment/vegetables-1', '/assets/img/assortment/vegetables-1-t', '/assets/img/assortment/vegetables-1-m') }}
+                                    {{ assortmentSlide('/assets/img/assortment/vegetables-2', '/assets/img/assortment/vegetables-2-t', '/assets/img/assortment/vegetables-2-m') }}
+
+                                </div>
+
+
+                            </div>
+
+                            <p class="assortment__info">Габаритные размеры упаковки должны быть кратными размеру стандартного поддона. Упаковка с продукцией должны укладываться на поддон без пустот внутри
+                                поддона и «нависаний» за пределами поддона.</p>
+                        </div>
+
+                    {% else %}
+
+                        <div class="assortment__slider_block" data-value="{{ item.value }}">
+
+
+                            <div class="assortment__slider swiper">
+
+                                <div class="assortment__arrows">
+                                    <button class="assortment__prev btn_round btn_prev_grey" aria-label="Показать предыдущий слайд"></button>
+
+                                    <button class="assortment__next btn_round btn_next_grey" aria-label="Показать следующий слайд"></button>
+                                </div>
+
+
+                                <div class="assortment__wrapper swiper-wrapper">
+
+                                    {{ assortmentSlide('/assets/img/assortment/milk-1', '/assets/img/assortment/milk-1-t', '/assets/img/assortment/milk-1-m') }}
+                                    {{ assortmentSlide('/assets/img/assortment/milk-2', '/assets/img/assortment/milk-2-t', '/assets/img/assortment/milk-2-m') }}
+                                    {{ assortmentSlide('/assets/img/assortment/milk-3', '/assets/img/assortment/milk-3-t', '/assets/img/assortment/milk-3-m') }}
+
+                                </div>
+
+                            </div>
+
+                            <p class="assortment__info">Габаритные размеры упаковки должны быть кратными размеру стандартного поддона. Упаковка с продукцией должны укладываться на поддон без пустот внутри
+                                поддона и «нависаний» за пределами поддона.</p>
+
+
+                        </div>
+                    {% endif %}
+
+
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </div>
+</section>

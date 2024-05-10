@@ -1,0 +1,23 @@
+{% from "components/card/review/review.njk" import reviewCard %}
+
+<section class="section section-reviews">    
+    <div class="container">
+        <div class="section-reviews__head">
+            <h2 class="reviews-slider__title h2">Нам доверяют</h2>
+            <div class="swiper-buttons-static">
+                <div class="swiper-button-default swiper-button-prev"></div>
+                <div class="swiper-button-default swiper-button-next"></div>
+            </div>
+        </div>
+        <div class="section-reviews__slider swiper">
+            <div class="swiper-wrapper">
+                {% for item in range(9) %}
+                    <div class="swiper-slide">
+                        {{ reviewCard() }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,223 @@
+{% from "components/card/assortment-slide/assortment-slide.njk" import assortmentSlide %}
+
+{% set assortment_list = [
+    {
+        name: 'SFT Liner KS Влагопрочность',
+        value: 'sft_liner_ks',
+        isChecked: true
+    },
+    {
+        name: 'SFT Liner 1 Скорость и прочность',
+        value: 'sft_liner_1',
+        isChecked: false
+    },
+    {
+        name: 'SFT Liner 2 Скорость и качество печати',
+        value: 'sft_liner_2',
+        isChecked: false
+    },
+    {
+        name: 'SFT Liner 4 Экономичность',
+        value: 'sft_liner_4',
+        isChecked: false
+    }
+] %}
+
+{% set assortment_list_1_2 = [
+    {
+        name: 'SFT Medium KS Влагопрочность',
+        value: 'sft_medium_ks',
+        isChecked: false
+    },
+    {
+        name: 'SFT Medium HP Скорость и прочность',
+        value: 'sft_medium_hp',
+        isChecked: false
+    },
+    {
+        name: 'SFT Medium Экономичность',
+        value: 'sft_medium',
+        isChecked: false
+    },
+    {
+        name: 'SFT Medium 4 Экономичность',
+        value: 'sft_medium_4',
+        isChecked: false
+    }
+] %}
+
+{% set assortment_list_2 = [
+    {
+        name: '90-112',
+        value: '90_112',
+        isChecked: true
+    },
+    {
+        name: '115-135',
+        value: '115_135',
+        isChecked: false
+    },
+    {
+        name: '140-200',
+        value: '140_200',
+        isChecked: false
+    }
+] %}
+
+
+<section class="assortment section" id="assortment">
+    <div class="container">
+
+        <div class="assortment__top">
+
+            <div class="assortment__descr">
+
+                <h2 class="assortment__title h2">Ассортимент тарного&nbsp;картона</h2>
+
+                <p class="assortment__subtitle">Широкий ассортимент тарного картона в совокупности с различными весами 1 квадратного метра бумажного полотна и форматов ролей позволяют увеличивать
+                    вариативность при производстве упаковочных решений</p>
+
+            </div>
+
+
+            <div class="assortment__panel">
+
+                <a href="#" class="assortment__download btn btn_grey btn_download_grey" download>Скачать каталог</a>
+
+                <a href="#contact-us" class="assortment__contact btn btn_orange">Связаться с нами</ф>
+
+            </div>
+
+        </div>
+
+        <ul class="assortment__tabs" data-tabs>
+            <li class="assortment__tab">
+                <a href="#assortment-grade" class="assortment__link" data-tabby-default>Марки</a>
+            </li>
+            <li class="assortment__tab">
+                <a href="#assortment-density" class="assortment__link">Плотности</a>
+            </li>
+        </ul>
+
+        <div class="assortment_carton__products assortment-products assortment-products-tables" id="assortment-grade">
+
+            <div class="assortment_carton__nav assortment-nav">
+
+                <p class="assortment_carton__name">Картон&nbsp;для&nbsp;плоских&nbsp;слоев&nbsp;/ Бумага&nbsp;для&nbsp;гофрирования</p>
+
+                <button class="assortment_carton__current assortment-current" data-value="sft_liner_ks">SFT Liner KS Влагопрочность</button>
+
+
+                <fieldset class="assortment_carton__fieldset">
+
+                    <span class="assortment__fieldset_name">Картон для плоских слоев</span>
+
+                    {% for item in assortment_list %}
+
+                        <label class="assortment__label" data-value="{{ item.value }}">
+
+                            <input type="radio" class="assortment__input visuallyhidden" name="grade" value="{{ item.value }}" {% if item.isChecked %} checked {% endif %}/>
+
+                            <span>{{ item.name }}</span>
+
+                        </label>
+
+                    {% endfor %}
+
+                    <span class="assortment__fieldset_name">Бумага для гофрирования</span>
+
+                    {% for item in assortment_list_1_2 %}
+
+                        <label class="assortment__label" data-value="{{ item.value }}">
+
+                            <input type="radio" class="assortment__input visuallyhidden" name="grade" value="{{ item.value }}" {% if item.isChecked %} checked {% endif %}/>
+
+                            <span>{{ item.name }}</span>
+
+                        </label>
+
+                    {% endfor %}
+
+                </fieldset>
+            </div>
+
+
+            <div class="assortment_carton__sliders">
+
+                {% for item in assortment_list %}
+
+
+                    <div {% if item.isChecked %} class="assortment__slider_block active" {% else %} class="assortment__slider_block " {% endif %} data-value="{{ item.value }}">
+
+                        {% include "components/section/table/table-grade.njk" %}
+
+
+                    </div>
+
+
+                {% endfor %}
+
+                {% for item in assortment_list_1_2 %}
+
+
+                    <div {% if item.isChecked %} class="assortment__slider_block active" {% else %} class="assortment__slider_block " {% endif %} data-value="{{ item.value }}">
+
+                        {% include "components/section/table/table-grade.njk" %}
+
+
+                    </div>
+
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        <div class="assortment_carton__products assortment-products assortment-products-tables" id="assortment-density">
+
+            <div class="assortment_carton__nav assortment-nav">
+
+                <button class="assortment_carton__current assortment-current" data-value="90_112">90-112</button>
+
+
+                <fieldset class="assortment_carton__fieldset">
+
+                    {% for item in assortment_list_2 %}
+
+                        <label class="assortment__label" data-value="{{ item.value }}">
+
+                            <input type="radio" class="assortment__input visuallyhidden" name="density" value="{{ item.value }}" {% if item.isChecked %} checked {% endif %}/>
+
+                            <span>{{ item.name }}</span>
+
+                        </label>
+
+                    {% endfor %}
+
+                </fieldset>
+            </div>
+
+
+            <div class="assortment_carton__sliders">
+
+
+                {% for item in assortment_list_2 %}
+
+                    <div {% if item.isChecked %} class="assortment__slider_block active" {% else %} class="assortment__slider_block" {% endif %} data-value="{{ item.value }}">
+
+                        {% include "components/section/table/table-density.njk" %}
+
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+
+        </div>
+
+        <div class="block_with_bottom_line"></div>
+
+    </div>
+</section>

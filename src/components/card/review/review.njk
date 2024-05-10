@@ -1,0 +1,32 @@
+{% macro reviewCard(
+    avatar = '/assets/img/slider/reviews/avatar@2x.webp',
+    name = 'Спортмастер',
+    category = 'Спортивный магазин для всей семьи',
+    descr = 'Используя все созданные нами ресурсы, мы уверены, что сможем разработать для вас упаковку, которая будет более эффективной, чем та, которая былау вас ранее...',
+    tags = [
+        '#Видео',
+        '#Документы',
+        '#Сертификаты'
+    ]
+) %}
+    <a href="#modal-review-detail" class="review-card link-card" data-modal>
+        <div class="review-card__head">
+            <img width="50" height="50" src="{{ avatar }}" alt="{{ name }}">
+            <div class="review-card__user">
+                <span class="review-card__name">{{ name }}</span>
+                <span class="review-card__category">{{ category }}</span>
+            </div>
+        </div>
+        <div class="review-card__body">
+            <p class="review-card__descr text-overflow">{{ descr }}</p>
+        </div>
+        <div class="review-card__footer">
+            <ul class="review-card__tags list-reset">
+                {% for tag in tags %}
+                    <li class="review-card__tag">{{ tag }}</li>
+                {% endfor %}
+            </ul>
+            <span class="review-card__link link-arrow">Читать весь отзыв</span>
+        </div>
+    </a>
+{% endmacro %}

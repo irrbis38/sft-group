@@ -1,0 +1,59 @@
+{% extends "layouts/modal.njk" %}
+
+{% from "components/media/image.njk" import image %}
+{% from "components/card/video/video.njk" import videoCard %}
+
+{% set modal_id = 'modal-review-detail' %}
+{% set isAside = true %}
+
+{% block content %}
+    <div class="review-detail">
+        <span class="review-detail__title h3">
+            Спортмастер — <br>
+            спортивный магазин <br>
+            для всей семьи
+        </span>
+        <p>
+            Используя все созданные нами ресурсы, мы уверены, что сможем разработать для вас упаковку, которая будет более эффективной, чем та, которая была у вас ранее. 
+            А если вы только запускаете производство, то мы создадим оптимальное упаковочное решение из всех возможных на современном рынке.
+        </p>
+        <p>
+            Используя все созданные нами ресурсы, мы уверены, что сможем разработать для вас упаковку, которая будет более эффективной, чем та, которая была у вас ранее. 
+            А если вы только запускаете производство, то мы создадим оптимальное упаковочное решение из всех возможных на современном рынке.
+        </p>
+        <div class="review-detail__grid grid">
+            <div class="col-12 col-sm-6">
+                {{ videoCard(
+                    preview = {
+                        src: '/assets/img/detail/review-1',
+                        ext: 'jpg',
+                        isFullWith: true
+                    }
+                ) }}
+            </div>
+            <div class="col-12 col-sm-6">
+                {{ image(
+                    src = '/assets/img/detail/review-2',
+                    ext = 'jpg',
+                    isFullWith = true
+                ) }}
+            </div>
+            <div class="col-12 col-sm-6">
+                <a href="#" target="_blank">
+                    {{ image(
+                        src = '/assets/img/detail/review-3',
+                        ext = 'jpg'
+                    ) }}
+                </a>
+            </div>
+            <div class="col-12 col-sm-6">
+                <a href="#" target="_blank">
+                    {{ image(
+                        src = '/assets/img/detail/review-3',
+                        ext = 'jpg'
+                    ) }}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

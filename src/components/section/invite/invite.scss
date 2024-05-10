@@ -1,0 +1,173 @@
+.invite__container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 65px;
+    gap: 40px;
+    grid-template-areas:
+        "title content"
+        "btn content";
+
+    @include media(max, desktop) {
+        display: block;
+    }
+}
+
+.invite__title {
+    grid-area: title;
+    font-size: 30px;
+    line-height: 120%;
+
+    @include media(max, desktop) {
+        max-width: 540px;
+        margin-bottom: 50px;
+    }
+
+    @include media(max, tablet) {
+        max-width: 360px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        line-height: 140%;
+    }
+}
+
+.invite__content {
+    grid-area: content;
+}
+
+.invite__btn {
+    grid-area: btn;
+}
+
+.invite__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 8px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    @include media(max, desktop) {
+        margin-bottom: 30px;
+    }
+
+    @include media(max, tablet) {
+        margin-bottom: 40px;
+    }
+
+    @include media(max, mobile) {
+        grid-template-columns: 1fr;
+    }
+}
+.invite__item {
+    min-height: 200px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 60px 0;
+    background-color: var(--color-grey1, #f0f2f4);
+    transition: background-color 0.2s ease-out;
+
+    @media (hover: hover) {
+        &:hover {
+            color: var(--color-white, #fff);
+            background-color: var(--color-green, #18984e);
+
+            path {
+                stroke: var(--color-white, #fff);
+            }
+
+            .invite__btn {
+                color: var(--color-white, #fff);
+
+                &::before {
+                    opacity: 1;
+                }
+
+                &::after {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+.invite__name {
+    max-width: 230px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 157%;
+}
+
+.invite__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+        display: block;
+        width: 24px;
+        height: 24px;
+
+        path {
+            transition: all 0.2s ease-out;
+        }
+    }
+}
+
+.invite__btn {
+    position: relative;
+    max-width: 142px;
+    padding-right: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 157%;
+    color: var(--color-grey, #98a4ae);
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: opacity 0.2s ease-out;
+    }
+
+    &::before {
+        opacity: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1318_29218)'%3E%3Cpath d='M2 2L8.12826 8.12826' stroke='white' stroke-width='0.8' stroke-linecap='square' /%3E%3Cpath d='M8.32356 2.66675V8.3236H2.66671' stroke='white' stroke-width='0.8' stroke-linecap='square' stroke-linejoin='round' /%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1318_29218'%3E%3Crect width='10' height='10' fill='white' /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    }
+
+    &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1622_20135)'%3E%3Cpath d='M2 2L8.12826 8.12826' stroke='%2398A4AE' stroke-width='0.8' stroke-linecap='square' /%3E%3Cpath d='M8.32356 2.66675V8.3236H2.66671' stroke='%2398A4AE' stroke-width='0.8' stroke-linecap='square' stroke-linejoin='round' /%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1622_20135'%3E%3Crect width='10' height='10' fill='white' /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    }
+}
+
+.invite__load_more {
+    display: none;
+
+    @include media(max, tablet) {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.invite__link {
+    max-width: 200px;
+
+    @include media(max, tablet) {
+        max-width: 500px;
+        margin: 0 auto 0;
+    }
+}

@@ -1,0 +1,29 @@
+{% from "components/media/image.njk" import image %}
+
+{% macro assortmentSlide(
+    imgFull = '/assets/img/assortment/vegetables-1',
+    imgTablet = '/assets/img/assortment/vegetables-1-t',
+    imgMobile = '/assets/img/assortment/vegetables-1-m'
+) %}
+
+    <div class="assortment__slide swiper-slide">
+
+        {{ image(
+            imgFull,
+            ext = 'jpg',
+            adaptive = [{
+                breakpoint: 'tablet',
+                src: imgTablet,
+                ext: 'jpg'
+            },{
+                breakpoint: 'mobile',
+                src: imgMobile,
+                ext: 'jpg'
+            }],
+            width = '1042',
+            height = '566',
+            isBackground = false
+        ) }}
+
+    </div>
+{% endmacro %}

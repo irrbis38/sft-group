@@ -1,0 +1,48 @@
+{% set logosList = [
+    {
+        name: '',
+        src: '/assets/img/slider/partners/1.svg'
+    },
+    {
+        name: '',
+        src: '/assets/img/slider/partners/2.svg'
+    },
+    {
+        name: '',
+        src: '/assets/img/slider/partners/3.svg'
+    },
+    {
+        name: '',
+        src: '/assets/img/slider/partners/4.svg'
+    },
+    {
+        name: '',
+        src: '/assets/img/slider/partners/1.svg'
+    },
+    {
+        name: '',
+        src: '/assets/img/slider/partners/2.svg'
+    },
+    {
+        name: '',
+        src: '/assets/img/slider/partners/3.svg'
+    },
+    {
+        name: '',
+        src: '/assets/img/slider/partners/4.svg'
+    }
+] %}
+
+<section class="section">
+    <div class="container">
+        <div class="partners-slider swiper">
+            <div class="swiper-wrapper">
+                {% for logo in logosList %}
+                    <div class="swiper-slide">
+                        <img class="partners-slider__logo" src="{{ logo.src }}" alt="{{ logo.name }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,157 @@
+{% extends "layouts/page.njk" %}
+
+{% from "components/section/page-intro/page-intro.njk" import pageIntro %}
+{% from "components/section/benefits/benefits.njk" import benefitsSection %}
+{% from "components/slider/team/team.njk" import teamSection %}
+{% from "components/section/links/links.njk" import linksSection %}
+
+{% set page_title = 'Гофроупаковка' %}
+{% set main_class = 'carton-page' %}
+
+{% set intro_links = [
+    {href: 'assortment', name: 'Ассортимент'},
+    {href: 'geo', name: 'География'},
+    {href: 'innovation', name: 'Инновации'},
+    {href: 'benefits', name: 'Преимущества'},
+    {href: 'stages', name: 'Этапы работы'},
+    {href: 'team', name: 'Ключевые лица'},
+    {href: 'sertificates', name: 'Сертификаты'}
+] %}
+
+{% set pi_data = {
+    class: 'carton',
+    text: 'Сырьё для производства гофротары, сотового картона, гильз и других упаковочных решений производится на трёх заводах в европейской части России',
+    title: 'Тарный картон',
+    imgFull: '/assets/img/page-intro/carton-bg',
+    imgTablet: '/assets/img/page-intro/carton-bg-tablet'
+
+} %}
+
+{% set gains_list = [
+    'Лидер на рынке макулатурных тарных картонов',
+    'Лучший технический сервис по переработке тарных картонов',
+    'Инновационный подход к разработке картона и бумаги'
+] %}
+
+{% block content %}
+
+    {{ pageIntro(pi_data.class, pi_data.text, pi_data.title, pi_data.imgFull, pi_data.imgTablet, intro_links) }}
+
+    <div class="gains section" id="next-section">
+        <div class="container">
+            <div class="gains__container swiper">
+                <div class="gains__wrapper swiper-wrapper">
+
+                    {% for text in gains_list %}
+
+                        <div class="gains__item swiper-slide">
+                            <span class="gains__num">№1</span>
+
+                            <span class="gains__text">{{ text }}</span>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <div class="gains__pagination"></div>
+            </div>
+        </div>
+    </div>
+
+    {% include "components/section/assortment/assortment-carton.njk" %}
+
+    {% include "components/section/branches/branches-carton.njk" %}
+
+    {% include "components/section/innovation/innovation.njk" %}
+
+    {% set benefits_subtitle = 'Наша опытная команда готова к реализации проектов любой сложности' %}
+
+    {% set benefits_main_title = 'Сервис и преимущества' %}
+
+    {% set benefits_data = [
+        {
+        icon: '/assets/img/benefits/icon-4.svg',
+        title: 'Технический сервис',
+        text: 'Проведём аудит производства гофроупаковки покупателя и подскажем оптимальные технологические параметры для работы оборудования на нашем сырье и повышения эффективности. Проводим локальное обучение покупателей'
+        },
+        {
+        icon: '/assets/img/benefits/icon-5.svg',
+        title: 'Клиентский сервис 24/7 ',
+        text: 'В любое время менеджер бэкофиса готов дать обратную связь по загрузку автомобиля, по наработке и остаткам на складе'
+        },
+        {
+        icon: '/assets/img/benefits/icon-6.svg',
+        title: 'Преимущества постоянных покупателей',
+        text: 'Для постоянных покупателей работает система финансовых инструментов (отсрочки, лимиты) Консигнационный склад для постоянных клиентов с длительным контрактом'
+        },
+        {
+        icon: '/assets/img/benefits/icon-4.svg',
+        title: 'Технический сервис',
+        text: 'Проведём аудит производства гофроупаковки покупателя и подскажем оптимальные технологические параметры для работы оборудования на нашем сырье и повышения эффективности. Проводим локальное обучение покупателей'
+        }
+    ] %}
+
+
+    {{ benefitsSection(benefits_subtitle, benefits_data, benefits_main_title) }}
+
+
+    {% set team_list = [
+        {
+            img: '/assets/img/team/person-4',
+            person: 'Авагимян Андрей',
+            position: 'Директор пр развитию продуктов',
+            department: ''
+        },
+        {
+            img: '/assets/img/team/person-5',
+            person: 'Гладышев Геннадий',
+            position: 'Коммерческий директор КБКФ',
+            department: ''
+        },
+        {
+            img: '/assets/img/team/person-6',
+            person: 'Тавкинь Наталья',
+            position: 'Коммерческий директор АБКФ',
+            department: ''
+        },
+        {
+            img: '/assets/img/team/person-5',
+            person: 'Гладышев Геннадий',
+            position: 'Коммерческий директор КБКФ',
+            department: ''
+        },
+        {
+            img: '/assets/img/team/person-6',
+            person: 'Тавкинь Наталья',
+            position: 'Коммерческий директор АБКФ',
+            department: ''
+        }
+    ] %}
+
+    {{ teamSection(team_list) }}
+
+    {% include "components/section/sertificates/sertificates.njk" %}
+
+    {% include "components/section/contact-us/contact-us.njk" %}
+
+    {% set links_data = [
+        {
+            title: 'Гофроупаковка',
+            imgFull: '/assets/img/links/links-bg-3',
+            imgTablet: '/assets/img/links/links-bg-3-tablet'
+        },
+        {
+            title: 'Ресайклинг',
+            imgFull: '/assets/img/links/links-bg-2',
+            imgTablet: '/assets/img/links/links-bg-2-tablet'
+        }
+    ] %}
+
+    {{ linksSection(links_data) }}
+
+{% endblock %}
+
+{% block modal %}
+    {% include "components/modal/about-detail/about-detail.njk" %}
+{% endblock %}

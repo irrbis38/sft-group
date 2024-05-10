@@ -1,0 +1,50 @@
+.review-detail {
+
+    &__title {
+        display: block;
+        max-width: 525px;
+        margin-bottom: 40px;
+
+        @include media(max, desktop) {
+            margin-bottom: 30px;
+
+            br {
+                display: none !important;
+            }
+        }
+    }
+
+    &__grid {
+        margin-top: 50px;
+        max-width: 826px;
+
+        @include media(max, desktop) {
+            margin-top: 40px;
+        }
+
+        .picture {
+            display: block;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+
+            &:not(.picture_full-width) {
+                padding: 28px;
+                background-color: var(--color-grey1);
+
+                img {
+                    max-width: 205px;
+                    margin: 0 auto;
+                }
+            }
+        }   
+    }
+
+    p {
+        margin-bottom: 20px;
+        max-width: 642px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

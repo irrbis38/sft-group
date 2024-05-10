@@ -1,0 +1,19 @@
+{% extends "layouts/page.njk" %}
+
+{% set page_title = 'Главная' %}
+{% set main_class = 'main-page' %}
+
+{% block content %}
+    {% include "components/slider/main-hero/main-hero.njk" %}
+    {% include "components/slider/main-advantages/main-advantages.njk" %}
+    {% include "components/section/advantages/advantages.njk" %}
+    {% include "components/section/geography/geography.njk" %}
+    {% include "components/section/innovation/innovation.njk" %}
+    {% include "components/slider/video/video.njk" %}
+    {% include "components/tabs/cooperation/cooperation.njk" %}
+    {% include "components/slider/reviews/reviews.njk" %}
+    {% include "components/slider/partners/partners.njk" %}
+    {% include "components/section/contact-us/contact-us.njk" %}
+    {% include "components/section/news/news.njk" %}
+    {% include "components/section/analytics-graph/analytics-graph.njk" %}
+{% endblock %}

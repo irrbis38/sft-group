@@ -1,0 +1,84 @@
+{% from "components/card/video/video.njk" import videoCard %}
+
+{% set videoList = [
+    {
+        title: 'SFT Group: мы создаем упаковку. Серия 1.',
+        preview: {
+            src: '/assets/img/slider/video/1',
+            ext: 'jpg'
+        },
+        src: 'https://vk.com/video_ext.php?oid=-132591577&id=456239161&hd=2',
+        type: 'iframe'
+    },
+    {
+        title: 'SFT Group: мы создаем упаковку. Серия 2',
+        preview: {
+            src: '/assets/img/slider/video/2',
+            ext: 'jpg'
+        },
+        src: 'https://youtu.be/B1k1ziP4bkg',
+        type: 'youtube'
+    },
+    {
+        title: 'SFT Group: мы создаем упаковку. Серия 1.',
+        preview: {
+            src: '/assets/img/slider/video/3',
+            ext: 'jpg'
+        },
+        src: '/assets/video/sft.mp4',
+        type: 'html5video'
+    },
+    {
+        title: 'SFT Group: мы создаем упаковку. Серия 1.',
+        preview: {
+            src: '/assets/img/slider/video/1',
+            ext: 'jpg'
+        },
+        src: 'https://vk.com/video_ext.php?oid=-132591577&id=456239161&hd=2',
+        type: 'iframe'
+    },
+    {
+        title: 'SFT Group: мы создаем упаковку. Серия 2',
+        preview: {
+            src: '/assets/img/slider/video/2',
+            ext: 'jpg'
+        },
+        src: 'https://youtu.be/B1k1ziP4bkg',
+        type: 'youtube'
+    },
+    {
+        title: 'SFT Group: мы создаем упаковку. Серия 1.',
+        preview: {
+            src: '/assets/img/slider/video/3',
+            ext: 'jpg'
+        },
+        src: '/assets/video/sft.mp4',
+        type: 'html5video'
+    }
+] %}
+
+<section class="section section_bordered">
+    <div class="container">
+        <div class="video-slider swiper">
+            <div class="video-slider__head">
+                <h2 class="video-slider__title h3">Видео о компании</h2>
+                <div class="swiper-buttons-static">
+                    <div class="swiper-button-default swiper-button-prev"></div>
+                    <div class="swiper-button-default swiper-button-next"></div>
+                </div>
+            </div>
+            <div class="swiper-wrapper">
+                {% for video in videoList %}
+                    <div class="swiper-slide">
+                        {{ videoCard(
+                            title = video.title,
+                            preview = video.preview,
+                            src = video.src,
+                            type = video.type
+                        ) }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

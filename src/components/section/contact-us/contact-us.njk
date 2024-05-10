@@ -1,0 +1,122 @@
+{% from "components/form/select/select.njk" import selectItem %}
+{% from "components/form/input/input.njk" import inputItem %}
+
+{% set region_options = [
+        {
+        value: 'default-hide',
+        label: 'Выбрать регион',
+        isSelected: true
+        },
+        {
+        value: 'Tver_region',
+        label: 'Тверская область',
+        isSelected: false
+        },
+        {
+        value: 'Rostov_region',
+        label: 'Ростовская область',
+        isSelected: false
+        },
+        {
+        value: 'Republic_of_Adygea',
+        label: 'Республика Адыгея',
+        isSelected: false
+        },
+        {
+        value: 'Tula_region',
+        label: 'Тульская область',
+        isSelected: false
+        }
+    ] %}
+
+{% set category_options = [
+        {
+        value: 'default-hide',
+        label: 'Выбрать категорию',
+        isSelected: true
+        },
+        {
+        value: 'category_1',
+        label: 'Категория 1',
+        isSelected: false
+        },
+        {
+        value: 'category_2',
+        label: 'Категория 2',
+        isSelected: false
+        },
+        {
+        value: 'category_3',
+        label: 'Категория 3',
+        isSelected: false
+        },
+        {
+        value: 'category_4',
+        label: 'Категория 4',
+        isSelected: false
+        },
+        {
+        value: 'category_5',
+        label: 'Категория 5',
+        isSelected: false
+        },
+        {
+        value: 'category_6',
+        label: 'Категория 6',
+        isSelected: false
+        },
+        {
+        value: 'category_7',
+        label: 'Категория 7',
+        isSelected: false
+        }
+    ] %}
+
+<section class="section" id="contact-us">
+    <div class="container">
+
+        <div class="contact-us rounded">
+            <div class="contact-us__bg"></div>
+            <div class="contact-us__wrapper">
+
+                <div class="contact-us__block">
+
+                    <h2 class="h2 contact-us__tittle">Узнайте, как наша компания может помочь именно вам</h2>
+
+                </div>
+
+                <form action="#" class="contact-us__form contact-us__block">
+
+                    <fieldset class="contact-us__fieldset">
+
+                        {{ selectItem('contact-us__select', 'light', 'region', region_options) }}
+
+                        {{ selectItem('contact-us__select', 'light', 'category', category_options) }}
+
+                        {{ inputItem('user_name', 'light', '', 'text', 'Имя', false) }}
+
+                        {{ inputItem('user_phone', 'light', '', 'text', 'Телефон', true) }}
+
+                        {{ inputItem('user_email', 'light', '', 'email', 'Email', true) }}
+
+                        {{ inputItem('user_comment', 'light', '', 'text', 'Комментарий', false) }}
+
+                    </fieldset>
+
+                    <div class="contact-us__bottom">
+
+                        <button class="contact-us__submit btn btn_white">Связаться с нами</button>
+
+                        <p class="contact-us__confirm">Нажимая кнопку, Вы даете информированное согласие на обработку своих персональных данных</p>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>

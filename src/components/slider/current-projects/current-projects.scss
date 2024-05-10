@@ -1,0 +1,129 @@
+.current-projects__top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0 20px;
+    margin-bottom: 60px;
+
+    @include media(max, desktop) {
+        margin-bottom: 50px;
+    }
+
+    @include media(max, tablet) {
+        margin-bottom: 30px;
+    }
+
+    @include media(max, mobile) {
+        display: block;
+    }
+}
+
+.current-projects__title {
+    max-width: 820px;
+
+    @include media(max, desktop) {
+        max-width: 500px;
+    }
+
+    @include media(max, tablet) {
+        max-width: 240px;
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    @include media(max, mobile) {
+        margin-bottom: 20px;
+    }
+}
+
+.current-projects__arrows {
+    flex: 0 0 138px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0 8px;
+
+    @include media(max, tablet) {
+        flex: 0 0 108px;
+    }
+}
+
+.current-projects__slider {
+    height: 545px;
+
+    @include media(max, desktop) {
+        height: 380px;
+    }
+
+    @include media(max, tablet) {
+        height: 730px;
+    }
+}
+
+.current-projects__slide {
+    height: 100%;
+    position: relative;
+    border-radius: var(--border-radius, 23px);
+    overflow: hidden;
+
+    // &::after {
+    //     content: "";
+    //     display: block;
+    //     width: 100%;
+    //     padding-top: 78.64%;
+    // }
+
+    @include media(max, tablet) {
+        height: calc((100% - 10px) / 2) !important;
+    }
+}
+
+.current-projects__inner {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // z-index: 2;
+    // width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.current-projects__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    picture,
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.current-projects__name {
+    max-width: 370px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 120%;
+    color: var(--color-white, #fff);
+
+    @include media(max, desktop) {
+        font-size: 20px;
+        line-height: 140%;
+    }
+}
+
+.current-projects__btn {
+    max-width: 152px;
+}

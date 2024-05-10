@@ -1,0 +1,58 @@
+{% from "components/media/image.njk" import image %}
+
+{% macro teamSection(
+    team_list
+) %}
+
+    <section class="team section" id="team">
+        <div class="container">
+
+            <div class="team__container block_with_bottom_line">
+
+
+                <div class="team__top">
+
+                    <h2 class="team__title">Ключевые лица&nbsp;дивизиона</h2>
+
+                    <div class="team__arrows">
+                        <button class="team__prev btn_round btn_prev_grey" aria-label="Показать предыдущий слайд"></button>
+
+                        <button class="team__next btn_round btn_next_grey" aria-label="Показать следующий слайд"></button>
+                    </div>
+
+                </div>
+
+
+                <div class="team__slider swiper">
+                    <div class="team__wrapper swiper-wrapper">
+
+                        {% for item in team_list %}
+
+                            <article class="team__slide swiper-slide">
+
+                                <div class="team__img">
+                                    {{ image(
+                                item.img,
+                                ext = 'jpg',
+                                width = '342',
+                                height = '388'
+                            ) }}
+                                </div>
+
+                                <h3 class="team__person">{{ item.person }}</h3>
+                                <p class="team__position">{{ item.position }}</p>
+                                <p class="team__department">{{ item.department }}</p>
+
+                            </article>
+
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+{% endmacro %}

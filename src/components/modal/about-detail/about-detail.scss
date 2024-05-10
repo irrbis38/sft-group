@@ -1,0 +1,112 @@
+.about-detail {
+    &__head {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-starts;
+        margin-bottom: 60px;
+
+        @include media(max, tablet) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__address {
+        position: relative;
+        display: flex;
+        align-items: baseline;
+        padding-left: 25px;
+        margin-top: 10px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 0;
+            top: 3px;
+            width: 15px;
+            height: 15px;
+            background-image: url('data:image/svg+xml,<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8875 5.28125C12.2312 2.39375 9.7125 1.09375 7.5 1.09375C7.5 1.09375 7.5 1.09375 7.49375 1.09375C5.2875 1.09375 2.7625 2.3875 2.10625 5.275C1.375 8.5 3.35 11.2312 5.1375 12.95C5.8 13.5875 6.65 13.9062 7.5 13.9062C8.35 13.9062 9.2 13.5875 9.85625 12.95C11.6437 11.2312 13.6187 8.50625 12.8875 5.28125ZM7.5 8.4125C6.4125 8.4125 5.53125 7.53125 5.53125 6.44375C5.53125 5.35625 6.4125 4.475 7.5 4.475C8.5875 4.475 9.46875 5.35625 9.46875 6.44375C9.46875 7.53125 8.5875 8.4125 7.5 8.4125Z" fill="%2318984E"/></svg>');
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 100px;
+
+        @include media(max, desktop) {
+            column-gap: 70px;
+        }
+    }
+
+    &__content {
+        width: calc(100% - 560px);
+
+        @include media(max, desktop) {
+            width: 100%;
+        }
+    }
+
+    &__properties {
+        margin-bottom: 40px;
+        width: calc(100% - calc(460px + 100px));
+
+        @include media(max, desktop) {
+            width: calc(100% - calc(295px + 70px));
+        }
+
+        @include media(max, tablet) {
+            width: 100%;
+        }
+    }
+
+    &__property {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 30px;
+        margin-bottom: 35px;
+
+        border-bottom: 1px solid rgba($color: #98A4AE, $alpha: .4);
+
+        @include media(max, tablet) {
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        &-name {
+            margin-bottom: 15px;
+            color: var(--color-grey);
+
+            @include media(max, tablet) {
+                margin-bottom: 5px;
+            }
+        }
+
+        &-value {
+            font-weight: 600;
+            font-size: 25px;
+
+            @include media(max, desktop) {
+                font-size: 20px;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .detail-slider {
+        width: 460px;
+
+        @include media(max, desktop) {
+            width: 295px;
+        }
+
+        @include media(max, tablet) {
+            margin-bottom: 30px;
+            order: -1;
+            width: 100%;
+        }
+    }
+}

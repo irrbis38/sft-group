@@ -1,0 +1,24 @@
+.analytics-graph {
+    &__pretitle {
+        margin-bottom: 10px;
+    }
+
+    &__title {
+        display: block;
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 40px;
+        font-weight: 600;
+
+        @include media(max, desktop) {
+            br {
+                display: none;
+            }
+        }
+
+        @include media(max, tablet) {
+            font-size: 20px;
+            line-height: 28px;
+        }
+    }
+}

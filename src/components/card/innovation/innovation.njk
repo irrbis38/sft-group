@@ -1,0 +1,16 @@
+{% macro innovationCard(
+    icon = '',
+    title = ''
+) %}
+    <div class="innovation-card glassy-card rounded">
+        <div class="innovation-card__wrapper glassy-card__wrapper">
+            <img
+                class="innovation__icon"
+                width="24"
+                height="24"
+                src="{{ icon }}"
+            >
+            <span class="innovation-card__title">{{ title | safe }}</span>
+        </div>
+    </div>
+{% endmacro %}

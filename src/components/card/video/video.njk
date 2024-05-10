@@ -1,0 +1,38 @@
+{% from "components/media/image.njk" import image %}
+
+{% macro videoCard(
+    isSmall = false,
+    color = '',
+    socialType = 'vk',
+    title = '',
+    src = '#',
+    type = 'iframe',
+    preview = {
+        src: '',
+        ext: '',
+        isFullWith: false
+    }
+) %}
+    <div class="video-card {{ 'video-card_' + color if color }} {{ 'video-card_small' if isSmall }}">
+        <a
+            class="video-card__trigger" 
+            href="{{ src }}"
+            data-type="{{ type }}" 
+            data-video
+        >
+            {{ image(
+                src = preview.src,
+                ext = preview.ext,
+                width = preview.width or '457',
+                height = preview.height or '295',
+                isFullWith = preview.isFullWith,
+                alt = title or 'Изображение'
+            ) }}
+        </a>
+        {% if title %}
+            <div class="video-card__title video-card__title_{{ socialType }}" title="{{ title }}">
+                <span>{{ title }}</span>
+            </div>
+        {% endif %}
+    </div>
+{% endmacro %}

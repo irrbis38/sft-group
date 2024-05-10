@@ -1,0 +1,27 @@
+{% macro inputItem(
+    name = '',
+    color = '',
+    class = '',
+    type = '',
+    placeholder= '',
+    isRequired = ''
+) %}
+
+    {# color - light (для тёмного фона) or dark (для светлого фона) #}
+
+    <div class="input_item input_item--{{ color }} {{ class }}">
+
+        {% if isRequired %}
+            <input {% if type %} type="{{ type }}" {% else %} type="text" {% endif %} name="{{ name }}" placeholder="{{ placeholder }}" required class="ii_required"/>
+
+        {% else %}
+
+            <input {% if type %} type="{{ type }}" {% else %} type="text" {% endif %} name="{{ name }}" placeholder="{{ placeholder }}"/>
+
+        {% endif %}
+
+        <span class="input_item__error">error message</span>
+
+    </div>
+
+{% endmacro %}

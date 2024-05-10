@@ -1,0 +1,70 @@
+{% set mainMenu = [{
+    name: 'О компании',
+    url: '#'
+},{
+    name: 'Гофроупаковка',
+    url: '#'
+},{
+    name: 'Тарный картон',
+    url: '#'
+},{
+    name: 'Ресайклинг',
+    url: '#'
+},{
+    name: 'Проекты и партнерство',
+    url: '#'
+},{
+    name: 'Контакты',
+    url: '#'
+}] %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <meta name="robots" content="noindex, nofollow"/>
+
+        <link rel="stylesheet" href="/assets/css/libs.min.css">
+        <link rel="stylesheet" href="/assets/css/sprite.css">
+        <link rel="stylesheet" href="/assets/css/app.css">
+        <title>
+            SFT Group | {{ page_title | safe }}
+        </title>
+    </head>
+    <body>
+        <!-- Маски для блоков -->
+        <svg class="svg-mask-sprite">
+            <clipPath id="main-hero-text-clip-path" clipPathUnits="objectBoundingBox">
+                <path d="M0.507,0 H0.015 C0.007,0,0,0.008,0,0.017 V0.135 C0,0.14,0.002,0.145,0.005,0.148 L0.077,0.215 C0.081,0.219,0.083,0.224,0.083,0.229 V0.395 C0.083,0.404,0.076,0.412,0.068,0.412 H0.015 C0.007,0.412,0,0.419,0,0.429 V0.983 C0,0.992,0.007,1,0.015,1 H0.456 C0.459,1,0.462,0.999,0.465,0.996 L0.543,0.925 C0.546,0.922,0.549,0.921,0.553,0.921 H0.985 C0.993,0.921,1,0.913,1,0.904 V0.352 C1,0.343,0.993,0.335,0.985,0.335 H0.626 C0.618,0.335,0.611,0.343,0.611,0.352 V0.395 C0.611,0.404,0.604,0.412,0.596,0.412 H0.537 C0.528,0.412,0.522,0.404,0.522,0.395 V0.017 C0.522,0.008,0.515,0,0.507,0"></path>
+            </clipPath>
+            <clipPath id="main-hero-section-clip-path" clipPathUnits="objectBoundingBox">
+                <path d="M0,0 V0.977 C0,0.99,0.007,1,0.016,1 H0.645 C0.649,1,0.652,0.998,0.655,0.994 L0.722,0.906 C0.725,0.902,0.729,0.9,0.733,0.9 H0.984 C0.993,0.9,1,0.89,1,0.877 V0 H0"></path>
+            </clipPath>
+            <clipPath id="main-advantages-section-clip-path" clipPathUnits="objectBoundingBox">
+                <path d="M0.017,1 H0.983 C0.993,1,1,0.984,1,0.964 V0.036 C1,0.016,0.993,0,0.983,0 H0.75 C0.746,0,0.742,0.003,0.739,0.009 L0.669,0.149 C0.666,0.155,0.662,0.158,0.658,0.158 H0.017 C0.007,0.158,0,0.174,0,0.194 V0.964 C0,0.984,0.007,1,0.017,1"></path>
+            </clipPath>
+        </svg>
+        {% include "components/header/header.njk" %}
+        <main class="{{ main_class if main_class else 'inner-page' }}"
+        >
+            {% block content %}{% endblock %}
+        </main>
+        {% include "components/footer/footer.njk" %}
+
+        {# MODALS #}
+        {% block modal %}{% endblock %}
+        {% include "components/modal/feedback/feedback.njk" %}
+        {% include "components/modal/resume/resume.njk" %}
+        {% include "components/modal/about-detail/about-detail.njk" %}
+        {% include "components/modal/review-detail/review-detail.njk" %}
+        
+        {# SCRIPTS #}
+        <script src="/assets/js/libs.min.js"></script>
+        <script src="/assets/js/gsap/gsap.min.js"></script>
+        <script src="/assets/js/gsap/ScrollTrigger.min.js"></script>
+        <script src="/assets/js/app.js"></script>
+    </body>
+</html>
+

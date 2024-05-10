@@ -1,0 +1,192 @@
+// Fancybox over styles
+
+.fancybox__modal {
+    backdrop-filter: blur(40.2159px); 
+
+    &-close {
+        position: absolute;
+        right: 23px;
+        top: 23px;
+    }
+
+    .fancybox__slide {
+        padding: 0 !important;
+
+        &::after, &::before {
+            display: none;
+        }
+    }
+    
+    .fancybox__backdrop {
+        background: rgba(24, 152, 78, 0.2);
+    }
+
+    &:not(.fancybox__modal_video) {
+        .fancybox__modal-close:not(:hover) {
+            background-color: var(--color-grey1);
+        }
+    }
+
+    &_video {
+        .fancybox__slide {
+            padding: 25px !important;
+        }
+        .fancybox__content {
+            padding: 5px;
+            background-color: #fff;
+
+            @include media(max, tablet) {
+                height: 320px !important;
+            }
+        }
+
+        .fancybox__modal-close {
+            @include media(max, tablet) {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+            }
+        }
+    }
+}
+
+.modal {
+    padding: 50px;
+    display: none;
+    width: 100%;
+    max-width: 1160px;
+    color: var(--color-black);
+
+    @include media(max, desktop) {
+        padding: 40px 30px;
+    }
+
+    @include media(max, tablet) {
+        padding: 50px 20px;
+    }
+
+    &_aside {
+        max-width: 100%;
+        margin-left: auto;
+        min-height: 100dvh;
+        overflow-y: auto;
+
+        @include media(min, tablet) {
+            max-width: 625px;
+        }
+
+        @include media(min, desktop) {
+            max-width: 1060px;
+        }
+        
+        &.modal_small {
+
+            @include media(min, tablet) {
+                max-width: 500px;
+            }
+
+            @include media(min, desktop) {
+                max-width: 600px;
+            }
+
+        }
+    }
+
+}
+
+.modal-content {
+    min-height: 100%;
+}
+
+.modal-form {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__field-group {
+        margin-top: 50px;
+        margin-bottom: auto;
+
+        @include media(max, tablet) {
+            margin-top: 40px;
+        }
+    }
+
+    &__field {
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        margin-top: 45px;
+    }
+
+    &__policy {
+        margin-top: 30px;
+        display: block;
+        text-align: center;
+        color: var(--color-grey);
+
+        @include media(max, desktop) {
+            font-size: 12px;
+            line-height: 18px;
+            max-width: 350px;
+            margin: 40px auto 0;
+            br {
+                display: none !important;
+            }
+        }
+
+        @include media(max, tablet) {
+            margin-top: 30px;
+        }
+    }
+
+    &__title {
+        @include media(min, tablet) {
+            font-size: 30px;
+            line-height: 36px;
+            font-weight: 600;
+        }
+    }
+}
+
+.modal {
+    &:has(.modal-form) {
+        .fancybox__modal-close {
+            border-radius: 0;
+            top: 35px;
+            right: 35px;
+            background-color: transparent !important;
+            border-radius: 50%;
+
+            &:hover {
+                background-color: var(--color-green) !important;
+            }
+
+            &::before {
+                background-image: url('data:image/svg+xml,<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_1411_20022)"><path d="M2.6967 2.3033L8 7.6066M13.3033 12.9099L8 7.6066M8 7.6066L13.3033 2.3033M8 7.6066L2.6967 12.9099" stroke="black" stroke-width="2"/></g><defs><clipPath id="clip0_1411_20022"><rect width="15" height="15" fill="white"/></clipPath></defs></svg>');
+            }
+
+            @include media(max, desktop) {
+                top: 0;
+                right: 0;
+            }    
+        }
+    }
+    .modal-form {
+        padding: 0 10px;
+
+        @include media(max, desktop) {
+            padding: 10px 50px 10px 30px;
+
+            @include media(max, tablet) {
+                padding: 0;
+            }
+        }
+    }
+}

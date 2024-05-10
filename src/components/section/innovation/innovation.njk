@@ -1,0 +1,49 @@
+{% from "components/media/image.njk" import image %}
+
+<section class="section section-innovation" id="innovation">
+    <div class="container">
+        <div class="section-innovation__top">
+            <div class="section-innovation__text">
+                <span class="section-innovation__pretitle pretitle">Научно-исследовательский центр</span>
+                <h2 class="section-innovation__title h1">
+                    Инновации
+                    <br>
+                        в гофроупаковке и тарном картоне
+                    </h2>
+                </div>
+                <div class="innovation-feedback glassy-card rounded">
+                    <div class="innovation-feedback__wrapper glassy-card__wrapper">
+                        <span class="innovation-feedback__title">
+                            Индивидуальный
+                            <br>
+                                запрос от покупателя
+                            </span>
+                            <span class="innovation-feedback__descr">
+                                Отвечаем на запросы, готовы разрабатывать продукт, обновлять продукт
+                            </span>
+                            <a class="innovation-feedback__link btn btn_orange" href="#">Предложить продукт или идею</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-innovation__bottom">
+                    {% include "components/slider/innovation/innovation.njk" %}
+
+                    <a class="section-innovation__link btn btn_orange" href="#">Предложить продукт или идею</a>
+                </div>
+            </div>
+            {{ image(
+        class = 'section-innovation__bg',
+        src = '/assets/img/section/innovation/bg',
+        ext = 'jpg',
+        adaptive = [{
+            breakpoint: 'mobile',
+            src: '/assets/img/section/innovation/bg-m',
+            ext: 'jpg'
+        },{
+            breakpoint: 'tablet',
+            src: '/assets/img/section/innovation/bg-t',
+            ext: 'jpg'
+        }],
+        isBackground = true
+    ) }}
+        </section>

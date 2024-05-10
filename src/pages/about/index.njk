@@ -1,0 +1,500 @@
+{% extends "layouts/page.njk" %}
+
+{% from "components/media/image.njk" import image %}
+{% from "components/slider/banner/banner.njk" import bannerSlider %}
+{% from "components/card/video/video.njk" import videoCard %}
+
+{% set page_title = 'О компании' %}
+{% set main_class = 'about-page' %}
+
+{% block content %}
+    <section class="about-hero section">
+        <div class="container">
+            <div class="about-hero__flex">
+                <h1 class="about-hero__title">
+                    Единственная в РФ упаковочная компания замкнутого цикла
+                </h1>
+                <div class="about-hero__bottom">
+                    <a class="about-hero__read-more" href="#">Читать больше</a>
+                    <div class="about-hero__descr">
+                        <div class="about-hero__icons">
+                            <img src="/assets/img/about/hero/box.svg" alt="Иконка">
+                            <img src="/assets/img/about/hero/spiral.svg" alt="Иконка">
+                            <img src="/assets/img/about/hero/recycling.svg" alt="Иконка">
+                        </div>
+                        <p class="about-hero__text">
+                            Индивидуальный подход, <br>
+                            передовые технологии <br>
+                            и экологическая ответсвенность
+                        </p>
+                    </div>
+                    <div class="about-hero__actions">
+                        <button class="btn_round btn_gradient btn_play" data-video="/assets/video/sft.mp4"></button>
+                        <button class="btn btn_gradient" data-video="/assets/video/sft.mp4">Посмотреть видео о компании</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ image(
+            class = 'about-hero__bg',
+            src = '/assets/img/about/hero/bg',
+            ext = 'jpg',
+            adaptive = [{
+                breakpoint: 'mobile',
+                src: '/assets/img/about/hero/bg-m',
+                ext: 'jpg'
+            },{
+                breakpoint: 'tablet',
+                src: '/assets/img/about/hero/bg-t',
+                ext: 'jpg'
+            }],
+            isBackground = true
+        ) }}
+    </section>
+    <section class="about-description section">
+        <div class="container">
+            <div class="grid">
+                <div class="col-12 col-md-3">
+                    <span class="pretitle">SFT Group</span>
+                </div>
+                <div class="col-12 col-md-7">
+                    <p class="big-text">
+                        Один из лидеров в переработке вторсырья <br>
+                        и производстве гофрокартона и упаковки, работающий с компаниями в России <br>
+                        и других странах
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include "components/slider/main-advantages/about-advantages.njk" %}
+    <section class="about-history section">
+        
+        {% set aboutAccordion = [
+            {
+                year: '2030',
+                description: '
+                    В структуре компании появилось предприятие по сбору и первичной 
+                    заготовке макулатуры ЮВИ СПб.SFT Group стала первой в России вертикально 
+                    интегрированной компанией целлюлозно-бумажной отрасли.
+                '
+            },{
+                year: '2023',
+                description: '
+                    В структуре компании появилось предприятие по сбору и первичной 
+                    заготовке макулатуры ЮВИ СПб.SFT Group стала первой в России вертикально 
+                    интегрированной компанией целлюлозно-бумажной отрасли.
+                '
+            },{
+                year: '2020',
+                description: '
+                    В структуре компании появилось предприятие по сбору и первичной 
+                    заготовке макулатуры ЮВИ СПб.SFT Group стала первой в России вертикально 
+                    интегрированной компанией целлюлозно-бумажной отрасли.
+                '
+            },{
+                year: '2018',
+                description: '
+                    В структуре компании появилось предприятие по сбору и первичной 
+                    заготовке макулатуры ЮВИ СПб.SFT Group стала первой в России вертикально 
+                    интегрированной компанией целлюлозно-бумажной отрасли.
+                '
+            },{
+                year: '2016',
+                description: '
+                    В структуре компании появилось предприятие по сбору и первичной 
+                    заготовке макулатуры ЮВИ СПб.SFT Group стала первой в России вертикально 
+                    интегрированной компанией целлюлозно-бумажной отрасли.
+                '
+            },{
+                year: '2012',
+                description: '
+                    В структуре компании появилось предприятие по сбору и первичной 
+                    заготовке макулатуры ЮВИ СПб.SFT Group стала первой в России вертикально 
+                    интегрированной компанией целлюлозно-бумажной отрасли.
+                '
+            },{
+                year: '2011',
+                description: '
+                    В структуре компании появилось предприятие по сбору и первичной 
+                    заготовке макулатуры ЮВИ СПб.SFT Group стала первой в России вертикально 
+                    интегрированной компанией целлюлозно-бумажной отрасли.
+                '
+            },{
+                year: '2010',
+                description: '
+                    В структуре компании появилось предприятие по сбору и первичной 
+                    заготовке макулатуры ЮВИ СПб.SFT Group стала первой в России вертикально 
+                    интегрированной компанией целлюлозно-бумажной отрасли.
+                '
+            }
+        ] %}
+        <div class="container">
+            <div class="grid">
+                <div class="about-history__aside col-12 col-lg-3">
+                    <span class="pretitle">История</span>
+                    <h2 class="semi-title">
+                        Компания,
+                        которая
+                        развивается
+                    </h2>
+                </div>
+                <div class="about-history__accordion col-12 col-lg-9 row-1 row-lg-2">
+                    <div class="accordion-container">
+                        {% for item in aboutAccordion %}
+                            <div class="ac">
+                                <div class="ac-header">
+                                    <button type="button" class="ac-trigger">{{ item.year }}</button>
+                                </div>
+                                <div class="ac-panel">
+                                    <div class="ac-text">
+                                        <p>{{ item.description }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                      </div>
+                </div>
+                <div class="about-history__load-more col-12 col-lg-3">
+                    <button class="btn btn_orange">Загрузить еще</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include "components/slider/strategy/strategy.njk" %}
+    {% include "components/section/geography/geography-about.njk" %}
+    <section class="about-team section">
+        {% set aboutTeamAccordion = [
+            {
+                title: 'Работа на пользу людям <br /> и экологии',
+                descr: 'Мы делаем благородное дело:  производим упаковку, ведь ни один товар не доедет до семей без нее, с другой стороны, делаем это экологичным способом, сохраняя леса для будущих поколений.',
+                img: {
+                    src: '/assets/img/about/team/banner',
+                    ext: 'jpg'
+                }
+            },
+            {
+                title: 'Профессиональный <br /> и карьерный рост',
+                descr: 'Повышение квалификации, обретение новых профессий, наставничество и обратная связь. 45% управленческого персонала начинали карьеру с цехов. 30% сотрудников работают более 10 лет.',
+                img: {
+                    src: '/assets/img/about/team/banner',
+                    ext: 'jpg'
+                }
+            },
+            {
+                title: 'Финансовая стабильность <br /> и справедливое вознаграждение',
+                descr: 'Современная система материального и нематериального вознаграждения, дополнительные программы поддержки сотрудников и семей',
+                img: {
+                    src: '/assets/img/about/team/banner',
+                    ext: 'jpg'
+                }
+            },
+            {
+                title: 'Одна из самых сильных <br /> команд на рынке',
+                descr: 'Высокий профессионализм, увлеченность делом, общение между дивизионами и регионами - это то, что всегда дает поддержку и уверенность',
+                img: {
+                    src: '/assets/img/about/team/banner',
+                    ext: 'jpg'
+                }
+            },
+            {
+                title: 'Корпоративная жизнь',
+                descr: 'Крупные корпоративные и образовательные мероприятия, спортивные соревнования на фабриках и площадках, поддержка спорта и возможность участвовать в экологических акциях',
+                img: {
+                    src: '/assets/img/about/team/banner',
+                    ext: 'jpg'
+                }
+            }
+        ] %}
+        <div class="container">
+            <div class="about-team__head">
+                <div class="about-team__head-title">
+                    <span class="pretitle">Команда</span>
+                    <h2 class="semi-title">
+                        Опытная команда, создающая <br>
+                        ценности для общества
+                    </h2>
+                </div>
+                <a href="#" class="btn btn_orange">Смотреть вакансии</a>
+            </div>
+            <div class="about-team__accordion accordion-container">
+                {% for item in aboutTeamAccordion %}
+                    <div class="ac">
+                        <div class="ac-header">
+                            <div type="button" class="ac-trigger">
+                                <div class="ac-trigger__content">
+                                    <span class="ac-trigger__title">{{ item.title | safe }}</span>
+                                    <span class="ac-trigger__descr">{{ item.descr | safe }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ac-panel">
+                            {{ bannerSlider([
+                                {
+                                    src: item.img.src,
+                                    ext: item.img.ext
+                                },
+                                {
+                                    src: item.img.src,
+                                    ext: item.img.ext
+                                },
+                                {
+                                    src: item.img.src,
+                                    ext: item.img.ext
+                                },
+                                {
+                                    src: item.img.src,
+                                    ext: item.img.ext
+                                }
+                            ]) }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% include "components/slider/video/video-about.njk" %}
+    <section class="about-employes section">
+        {% set employes = [
+            {
+                img: {
+                    src: '/assets/img/about/employee',
+                    ext: 'jpg'
+                },
+                name: 'Евгени Глезман',
+                position: 'Председатель Правления СФТ Групп'
+            },
+            {
+                img: {
+                    src: '/assets/img/about/employee',
+                    ext: 'jpg'
+                },
+                name: 'Крупина Сергей',
+                position: 'Член правления, Финансовый директор'
+            },
+            {
+                img: {
+                    src: '/assets/img/about/employee',
+                    ext: 'jpg'
+                },
+                name: 'Штейнберг Роман',
+                position: 'Член правления, директор по развитию'
+            },
+            {
+                img: {
+                    src: '/assets/img/about/employee',
+                    ext: 'jpg'
+                },
+                name: 'Вишняков Олег',
+                position: 'Председатель Правления СФТ Групп'
+            },
+            {
+                img: {
+                    src: '/assets/img/about/employee',
+                    ext: 'jpg'
+                },
+                name: 'Сафронов Анатолий',
+                position: 'Член правления, Финансовый директор'
+            },
+            {
+                img: {
+                    src: '/assets/img/about/employee',
+                    ext: 'jpg'
+                },
+                name: 'Штейнберг Роман',
+                position: 'Член правления, директор по развитию'
+            }    
+        ] %}
+        <div class="container">
+            <div class="grid">
+                <div class="about-employes__head col-12 col-lg-3">
+                    <h2 class="semi-title">
+                        Ключевые <br>
+                        лица компании
+                    </h2>
+                    <div class="tags-container">
+                        <ul class="tag-list list-reset">
+                            <li class="tag-list__item">
+                                <a class="tag-list__link active" href="#">Все</a>
+                            </li>
+                            <li class="tag-list__item">
+                                <a class="tag-list__link" href="#">Тарный картон</a>
+                            </li>
+                            <li class="tag-list__item">
+                                <a class="tag-list__link" href="#">Гофроупаковка</a>
+                            </li>
+                            <li class="tag-list__item">
+                                <a class="tag-list__link" href="#">Ресайклинг</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-employes__team col-12 row-1 row-lg-2 col-lg-9">
+                    <div class="grid">
+                        {% for item in employes %}
+                        <div class="col-6 col-md-4">
+                            <article class="team__card">
+                                <div class="team__img">
+                                    {{ image(
+                                        src = item.img.src,
+                                        ext = item.img.ext,
+                                        width = '342',
+                                        height = '388',
+                                        alt = item.name
+                                    ) }}
+                                </div>
+                                <h3 class="team__person">{{ item.name }}</h3>
+                                <p class="team__position">{{ item.position }}</p>
+                            </article>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="about-employes__load-more col-12 col-lg-3">
+                    <a href="#" class="btn btn_orange">Загрузить еще</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-vacancies section">
+        <div class="container">
+            <div class="about-vacancies__flex rounded">
+                <div class="about-vacancies__left">
+                    <div class="about-vacancies__head">
+                        <span class="pretitle">Открытые вакансии</span>
+                        <h2 class="h2">
+                            Будем рады видеть тебя в нашей команде
+                        </h2>
+                    </div>
+                    <div class="about-vacancies__video">
+                        {{ videoCard(
+                            isSmall = true,
+                            preview = {
+                                src: '/assets/img/about/vacancies/video-preview',
+                                ext: 'jpg',
+                                width: '293',
+                                height: '293'
+                            },
+                            src = 'https://youtu.be/B1k1ziP4bkg',
+                            type = 'youtube'
+                        ) }}
+                        <p>Мы развиваемся и растем — и поэтому хотим видеть в нашей команде новых людей, талантливых, целеустремленных, желающих улучшить собственную жизнь и окружающую действительность. Если вам интересна работа в такой компании и близки наши ценности, напишите нам прямо сейчас. Возможно, это станет первым шагом к успеху и самореализации.</p>
+                    </div>
+                </div>
+                <div class="about-vacancies__right">
+                    <div class="about-vacancies__contacts">
+                        <span class="h6">Контакты <br> для соискателей</span>
+                        <a class="about-vacancies__link about-vacancies__link_email" href="mailto:hr@sft.ru">
+                            hr@sft.ru
+                        </a>
+                        <a class="about-vacancies__link about-vacancies__link_phone" href="tel:+74952151082">
+                            +7 (495) 215 10 82
+                        </a>
+                    </div>
+                    <button data-modal="#modal-resume" class="about-vacancies__btn btn btn_gradient">Отправить резюме</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-certificates section">
+        <div class="container">
+            <div class="grid">
+                <div class="about-certificates__head col-12 col-lg-3">
+                    <h2 class="semi-title">
+                        Сертификаты
+                        <span class="separator">/</span>
+                        Стандарты
+                    </h2>
+                </div>
+                <div class="about-certificates__list col-12 col-lg-9 row-1 row-lg-2">
+                    <div class="certificate-card">
+                        <span class="certificate-card__text">Сертификат соответствия СМК СКБК требованиям ISO 9001:2015</span>
+                        <a class="certificate-card__download icon icon-download" href="#" download></a>
+                    </div>
+                    <div class="certificate-card">
+                        <span class="certificate-card__text">Сертификат соответствия СМК СКБК требованиям ISO 9001:2015</span>
+                        <a class="certificate-card__download icon icon-download" href="#" download></a>
+                    </div>
+                    <div class="certificate-card">
+                        <span class="certificate-card__text">Сертификат соответствия СМК СКБК требованиям ISO 9001:2015</span>
+                        <a class="certificate-card__download icon icon-download" href="#" download></a>
+                    </div>
+                    <div class="certificate-card">
+                        <span class="certificate-card__text">Сертификат соответствия СМК СКБК требованиям ISO 9001:2015</span>
+                        <a class="certificate-card__download icon icon-download" href="#" download></a>
+                    </div>
+                </div>
+                <div class="about-certificates__load-more col-12 col-lg-3">
+                    <a class="btn btn_orange" href="#">Загрузить еще</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="grid">
+                <div class="col-12 col-lg-6">
+                    <div class="about-banner rounded">
+                        <div class="about-banner__content">
+                            <span class="about-banner__pretitle pretitle">Устойчивое развитие</span>
+                            <h2 class="about-banner__title h2">
+                                Забота <br>
+                                об экологии
+                            </h2>
+                            <p class="about-banner__descr">
+                                Мы хотим сохранить прекрасную природу нашей планеты для будущих поколений и делаем для этого все, что в наших силах. Поэтому SFT Group 
+                                выбрала одним из направлений деятельности переработку макулатуры 
+                                и другого вторсырья, которое впоследствии используется в производстве гофрокартона и упаковки. Предприятия группы оснащены современными очистными сооружениями и фильтрами и используют энергосберегающие технологии, чтобы сберечь природные ресурсы.
+                            </p>
+                        </div>
+                        {{ image(
+                            class = 'about-banner__bg',
+                            src = '/assets/img/about/banner/1',
+                            ext = 'jpg',
+                            adaptive = [{
+                                breakpoint: 'mobile',
+                                src: '/assets/img/about/banner/1-m',
+                                ext: 'jpg'
+                            },{
+                                breakpoint: 'tablet',
+                                src: '/assets/img/about/banner/1-t',
+                                ext: 'jpg'
+                            }],
+                            isBackground = true
+                        ) }}
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="about-banner rounded">
+                        <div class="about-banner__content">
+                            <span class="about-banner__pretitle pretitle">Устойчивое развитие</span>
+                            <h2 class="about-banner__title h2">
+                                Социальные инвестиции
+                            </h2>
+                            <p class="about-banner__descr">
+                                Среди целей нашей компании — улучшение жизни в регионах, 
+                                где работают наши предприятия. Поэтому мы активно сотрудничаем с административными органами и общественными организациями, участвуя в благоустройстве территорий, проведении социально значимых общественных мероприятий, оказывая адресную помощь нуждающимся
+                            </p>
+                        </div>
+                        {{ image(
+                            class = 'about-banner__bg',
+                            src = '/assets/img/about/banner/2',
+                            ext = 'jpg',
+                            adaptive = [{
+                                breakpoint: 'mobile',
+                                src: '/assets/img/about/banner/2-m',
+                                ext: 'jpg'
+                            },{
+                                breakpoint: 'tablet',
+                                src: '/assets/img/about/banner/2-t',
+                                ext: 'jpg'
+                            }],
+                            isBackground = true
+                        ) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include "components/slider/about-partners/about-partners.njk" %}
+{% endblock %}

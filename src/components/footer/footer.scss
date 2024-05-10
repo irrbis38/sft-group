@@ -1,0 +1,254 @@
+.footer-phone {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    @include media(max, desktop) {
+        gap: 15px;
+    }
+
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-white);
+
+        @include media(max, desktop) {
+            &::before {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            font-size: 20px;
+
+            @include media(max, desktop) {
+                font-size: 18px;
+            }
+        }
+
+        @include media(min, desktop) {
+            span {
+                font-size: 12px;
+                color: rgba($color: #fff, $alpha: 0.5);
+            }
+        }
+    }
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    &__list {
+        display: flex;
+        gap: 8px;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.footer-copywriter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include media(max, tablet) {
+        align-items: flex-start;
+    }
+}
+
+.footer {
+    color: var(--color-white);
+    background-color: var(--color-green);
+    margin-top: 100px;
+    overflow: hidden;
+
+    @include media(max, desktop) {
+        margin-top: 70px;
+    }
+
+    @include media(max, tablet) {
+        margin-top: 60px;
+    }
+
+    &__flex {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 400px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 75%;
+            height: 196%;
+            top: -19%;
+            left: 13%;
+            background: linear-gradient(
+                60.36deg,
+                #49a071 15.15%,
+                #b0ee00 88.54%
+            );
+            border-radius: 100%;
+            filter: blur(70px);
+            transform: rotate(-180deg);
+
+            @include media(max, desktop) {
+                width: 118%;
+                height: 181%;
+                left: 17%;
+                top: 21%;
+            }
+
+            @include media(max, tablet) {
+                width: 210%;
+                height: 126%;
+                left: 0;
+                top: 27%;
+            }
+        }
+
+        @include media(max, desktop) {
+            min-height: unset;
+        }
+    }
+
+    &__logo {
+        @include media(max, tablet) {
+            display: none;
+        }
+    }
+
+    &__top,
+    &__bottom {
+        position: relative;
+        padding: 40px 0;
+        display: flex;
+        justify-content: space-between;
+        z-index: 1;
+    }
+
+    &__top {
+        flex: 1;
+        align-items: flex-start;
+        border-bottom: 1px solid rgba($color: #fff, $alpha: 0.3);
+
+        @include media(max, desktop) {
+            padding: 40px 0 60px;
+        }
+
+        @include media(max, tablet) {
+            padding: 40px 0 50px;
+        }
+    }
+
+    &__bottom {
+        align-items: flex-end;
+
+        @include media(max, desktop) {
+            padding: 30px 0;
+        }
+
+        @include media(max, tablet) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 50px 0 40px;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        @include media(max, desktop) {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 40px;
+        }
+
+        @include media(max, tablet) {
+            width: 100%;
+            align-items: flex-start;
+            gap: 30px;
+        }
+    }
+
+    &__download {
+        min-width: 270px;
+
+        @include media(max, desktop) {
+            min-width: 245px;
+        }
+
+        @include media(max, tablet) {
+            min-width: 100%;
+        }
+    }
+
+    a {
+        color: inherit;
+    }
+}
+
+// light version
+
+.footer.footer-light {
+    color: var(--color-black, #000);
+    background-color: var(--color-grey1, #f0f2f4);
+
+    .footer__flex {
+        &::after {
+            background: none;
+            filter: unset;
+        }
+    }
+
+    .footer-phone__icon {
+        background-color: var(--color-green, #18984e);
+    }
+
+    .footer-phone__text {
+        span {
+            color: var(--color-grey, #98a4ae);
+        }
+    }
+
+    .footer__download {
+        border: 1px solid rgba(152, 164, 174, 0.3);
+        transition: unset;
+    }
+
+    .footer-copywriter {
+        span {
+            &:nth-child(2) {
+                color: var(--color-grey, #98a4ae);
+            }
+        }
+    }
+
+    .footer-socials__item {
+        border-radius: 50%;
+        border: 1px solid rgba(152, 164, 174, 0.3);
+        transition: background-color 0.2s ease;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: rgba(152, 164, 174, 0.3);
+            }
+        }
+    }
+}

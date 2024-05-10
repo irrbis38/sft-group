@@ -1,0 +1,138 @@
+{% extends "layouts/page.njk" %}
+
+{% set page_title = 'UI' %}
+{% set main_class = 'ui-page' %}
+
+{% block content %}
+
+    <section class="section ui-buttons">
+        <div class="container">
+
+            <h2 class="h2">Кнопки</h2>
+
+            <div class="ui-buttons__list">
+
+                <div class="ui-buttons__item ui-buttons__item--white">
+
+                    <button class="btn btn_green">Связаться с нами</button>
+
+                </div>
+
+
+                <div class="ui-buttons__item ui-buttons__item--grey">
+
+                    <button class="btn btn_white">Связаться с нами</button>
+
+                </div>
+
+
+                <div class="ui-buttons__item ui-buttons__item--grey">
+
+                    <button class="btn btn_white_to_green">Связаться с нами</button>
+
+                </div>
+
+
+                <div class="ui-buttons__item ui-buttons__item--white">
+
+                    <button class="btn btn_grey">Связаться с нами</button>
+
+                </div>
+
+
+                <div class="ui-buttons__item ui-buttons__item--white">
+
+                    <button class="btn btn_orange">Связаться с нами</button>
+
+                </div>
+
+
+                <div class="ui-buttons__item ui-buttons__item--green">
+
+                    <button class="btn btn_gradient">Связаться с нами</button>
+
+                </div>
+
+
+            </div>
+
+            <div class="ui-buttons__list">
+
+                <div class="ui-buttons__item ui-buttons__item--white">
+
+                    <button class="btn_round btn_green btn_close_green" aria-label="Закрыть"></button>
+
+                </div>
+
+
+                <div class="ui-buttons__item ui-buttons__item--grey">
+
+                    <button class="btn_round btn_close_white" aria-label="Закрыть"></button>
+
+                </div>
+
+
+                <div class="ui-buttons__item ui-buttons__item--white">
+
+                    <button class="btn_round btn_prev_grey" aria-label="Перейти к"></button>
+
+                </div>
+
+
+                <div class="ui-buttons__item ui-buttons__item--white">
+
+                    <button class="btn_round btn_next_grey" aria-label="Перейти к"></button>
+
+                </div>
+
+
+                <div class="ui-buttons__item ui-buttons__item--white">
+
+                    <button class="btn_round btn_orange btn_follow" aria-label="Перейти к "></button>
+
+                </div>
+
+
+                <div class="ui-buttons__item ui-buttons__item--white">
+
+                    <button class="btn_round btn_orange btn_phone" aria-label="Позвонить"></button>
+
+                </div>
+
+
+                <div class="ui-buttons__item ui-buttons__item--green">
+
+                    <button class="btn_round btn_gradient btn_follow" aria-label="Перейти к"></button>
+
+                </div>
+
+            </div>
+
+
+            <div class="ui-buttons__list">
+
+                <div class="ui-buttons__item ui-buttons__item--white">
+
+                    <button class="btn btn_download_white">Скачать презентацию</button>
+
+                </div>
+
+                <div class="ui-buttons__item ui-buttons__item--green">
+
+                    <button class="btn btn_gradient btn_download_gradient">Скачать презентацию</button>
+
+                </div>
+
+                <div class="ui-buttons__item ui-buttons__item--white">
+
+                    <button class="btn btn_grey btn_download_grey">Скачать презентацию</button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    {% include "components/section/contact-us/contact-us.njk" %}
+{% endblock %}

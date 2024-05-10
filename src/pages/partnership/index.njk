@@ -1,0 +1,98 @@
+{% extends "layouts/page.njk" %}
+
+{% from "components/section/page-intro/page-intro-partnership.njk" import pageIntro %}
+{% from "components/section/links/links.njk" import linksSection %}
+{% from "components/section/benefits/benefits.njk" import benefitsSection %}
+
+{% set page_title = 'Проекты и партнерство' %}
+{% set main_class = 'partnership-page' %}
+
+{% set pi_data = {
+    class: 'partnership',
+    text: 'Активно участвуем в российских и международных проектах, касающихся защиты окружающей среды, рационального использования ресурсов, цифровизации и развития современных технологий.',
+    title: 'Проекты и партнерство',
+    imgFull: '/assets/img/page-intro/partnership-bg',
+    imgTablet: '/assets/img/page-intro/partnership-bg-tablet'
+} %}
+
+
+{% block content %}
+
+    {{ pageIntro(pi_data.class, pi_data.text, pi_data.title, pi_data.imgFull, pi_data.imgTablet) }}
+
+    {% include "components/section/invite/invite.njk" %}
+
+    {% include "components/slider/current-projects/current-projects.njk" %}
+
+    {% include "components/slider/our-partners/our-partners.njk" %}
+
+    {% include "components/slider/possibilities/possibilities.njk" %}
+
+
+    {% set benefits_subtitle = 'Безопасность и прозрачность' %}
+
+    {% set benefits_main_title = 'Преимущества' %}
+
+    {% set benefits_data = [
+        {
+        icon: '/assets/img/benefits/icon-10.svg',
+        title: 'Наши заводы включены в реестр ПКК РЭО',
+        text: ''
+        },
+        {
+        icon: '/assets/img/benefits/icon-10.svg',
+        title: 'Пять лет безупречной работы и партнерских отношений по выполнению нормативов утилизации',
+        text: ''
+        },
+        {
+        icon: '/assets/img/benefits/icon-10.svg',
+        title: 'Действующие предприятия с реальными мощностями',
+        text: ''
+        },
+        {
+        icon: '/assets/img/benefits/icon-10.svg',
+        title: 'Квалифицированный персонал',
+        text: ''
+        },
+        {
+        icon: '/assets/img/benefits/icon-10.svg',
+        title: 'Пять лет безупречной работы и партнерских отношений по выполнению нормативов утилизации',
+        text: ''
+        },
+        {
+        icon: '/assets/img/benefits/icon-10.svg',
+        title: 'Действующие предприятия с реальными мощностями',
+        text: ''
+        },
+        {
+        icon: '/assets/img/benefits/icon-10.svg',
+        title: 'Квалифицированный персонал',
+        text: ''
+        }
+    ] %}
+
+
+    {{ benefitsSection(benefits_subtitle, benefits_data, benefits_main_title) }}
+
+    {% include "components/section/sertificates/sertificates.njk" %}
+
+    {% include "components/section/contact-us/contact-us.njk" %}
+
+
+    {% set links_data = [
+        {
+            title: 'Гофроупаковка',
+            imgFull: '/assets/img/links/links-bg-3',
+            imgTablet: '/assets/img/links/links-bg-3-tablet'
+        },
+        {
+            title: 'Тарный картон',
+            imgFull: '/assets/img/links/links-bg-1',
+            imgTablet: '/assets/img/links/links-bg-1-tablet'
+        }
+    ] %}
+
+    {{ linksSection(links_data) }}
+
+
+{% endblock %}

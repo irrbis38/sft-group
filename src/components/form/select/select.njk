@@ -1,0 +1,32 @@
+{# color - light (для тёмного фона) or dark (для светлого фона) #}
+{# class: кастомный класс для элемента select #}
+
+{# Чтобы скрыть элемент списка, выбранный по умолчанию, #}
+{# т.е. который будет placehoder-ом #}
+{# необходимо указать для соответствующего option значение default-hide #}
+
+
+    {% macro selectItem(
+class = '',
+color = '',
+name = '',
+options = []
+) %}
+
+        <select name="{{ name }}" class="select {{ class }}" data-color="{{ color }}"> {% for option in options %}
+
+            {% if option.selected %}
+
+                <option value="{{ option.value }}" selected>{{ option.label }}</option>
+
+            {% else %}
+
+                <option value="{{ option.value }}">{{ option.label }}</option>
+
+            {% endif %}
+
+        {% endfor %}
+
+    </select>
+
+{% endmacro %}

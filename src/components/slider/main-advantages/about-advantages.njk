@@ -1,0 +1,55 @@
+{% from "components/media/image.njk" import image %}
+
+{% set directions = [{
+    title: '№1',
+    descr: 'Один из лидеров в переработке вторсырья, производстве макулатурных тарных картонов и гофроупаковки, работающий с компаниями в России и других странах',
+    bg: {
+        src: '/assets/img/about/directions/bg',
+        ext: 'jpg'
+    }
+},{
+    title: '100 000+',
+    descr: 'За 20 лет работы разработано более 100000 вариантов упаковки для наших покупателей, а также инновационные технологии по производству',
+    bg: {
+        src: '/assets/img/about/directions/bg',
+        ext: 'jpg'
+    }
+},{
+    title: '10 000+',
+    descr: 'Более 10 000 тысяч покупателей, для которых была разработана и изготовлена упаковка — более 2/3 из них стали нашими постоянными партнерами',
+    bg: {
+        src: '/assets/img/about/directions/bg',
+        ext: 'jpg'
+    }
+},{
+    title: '2 700',
+    descr: 'В холдинг входят 9 предприятий в 7 регионах России, на которых трудится более 2700 сотрудников — те люди, с которыми вместе мы создаем упаковку и и заботимся о природе',
+    bg: {
+        src: '/assets/img/about/directions/bg',
+        ext: 'jpg'
+    }
+}] %}
+
+<section class="section main-advantages about-advantages">
+    <div class="container">
+        <div class="main-advantages__slider swiper">
+            <div class="swiper-wrapper">
+                {% for item in directions %}
+                    <div class="swiper-slide">
+                        <div class="about-advantages-card">
+                            <span class="about-advantages-card__title">{{ item.title }}</span>
+                            <p class="about-advantages-card__descr">{{ item.descr }}</p>
+                            {{ image(
+                                class = 'about-advantages-card__bg',
+                                src = item.bg.src,
+                                ext = item.bg.ext,
+                                isBackground = true
+                            ) }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>

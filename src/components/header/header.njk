@@ -1,0 +1,34 @@
+<!-- Классы header_absolute и header_white добавлять, только если шапка должна быть поверх первого блока страницы -->
+<header class="header header_absolute header_white">
+    <div class="container">
+        <div class="header__flex">
+            <a class="header__logo" href="/">
+                <img class="header__logo-b" width="136" height="25" src="/assets/img/logo.svg" alt="SFT Group">
+                <img class="header__logo-w" width="136" height="25" src="/assets/img/logo-w.svg" alt="SFT Group">
+            </a>
+            <div class="header-menu">
+                <nav class="header-menu__nav">
+                    <ul class="header-menu__list list-reset">
+                        {% for item in mainMenu %}
+                            <li class="header-menu__item">
+                                <a class="header-menu__link link" href="{{ item.url }}">{{ item.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+            <div class="header__contacts">
+                <a href="#modal-feedback" class="header__phone link" data-modal>
+                    <span>Связаться с нами</span>
+                </a>
+                <button class="header__burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+

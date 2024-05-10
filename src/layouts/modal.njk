@@ -1,0 +1,5 @@
+<div class="modal {{ 'modal_aside' if isAside }} {{ 'modal_' + modalSize if modalSize }}" id="{{ modal_id }}">
+    <div class="modal-content">
+        {% block content %}{% endblock %}
+    </div>
+</div>

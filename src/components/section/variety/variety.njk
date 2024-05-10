@@ -1,0 +1,115 @@
+{% from "components/media/image.njk" import image %}
+
+{% macro varietySection(
+    variety_data
+) %}
+
+    {% set vlist = [
+        {
+            name: 'Гофрокартон',
+            mark: 'МС 8В13В',
+            imgSrc: '/assets/img/variety/variety-1'
+        },
+        {
+            name: 'Белая бумага, документы',
+            mark: 'МС 7Б/1',
+            imgSrc: '/assets/img/variety/variety-2'
+        },
+        {
+            name: 'Журналы, каталоги',
+            mark: 'МС 7Б/2',
+            imgSrc: '/assets/img/variety/variety-3'
+        },
+        {
+            name: 'Книги',
+            mark: 'МС 7Б/3',
+            imgSrc: '/assets/img/variety/variety-4'
+        },
+        {
+            name: 'Газеты',
+            mark: 'МС 8В/1',
+            imgSrc: '/assets/img/variety/variety-5'
+        },
+        {
+            name: 'Типографский картон',
+            mark: 'МС 6Б',
+            imgSrc: '/assets/img/variety/variety-6'
+        },
+        {
+            name: 'Смесь всех марок',
+            mark: 'МС 13В',
+            imgSrc: '/assets/img/variety/variety-7'
+        },
+        {
+            name: 'Банановые коробки',
+            mark: 'МС 13В',
+            imgSrc: '/assets/img/variety/variety-8'
+        },
+        {
+            name: 'Литые изделия из бумажной массы',
+            mark: 'МС 10В',
+            imgSrc: '/assets/img/variety/variety-9'
+        },
+        {
+            name: 'Бумажные гильзы',
+            mark: 'МС 9В',
+            imgSrc: '/assets/img/variety/variety-10'
+        },
+        {
+            name: 'Полимеры',
+            mark: '',
+            imgSrc: '/assets/img/variety/variety-11'
+        },
+        {
+            name: 'Стрейч-плёнка',
+            mark: '',
+            imgSrc: '/assets/img/variety/variety-12'
+        }
+    ] %}
+
+    <section class="variety section">
+        <div class="container variety__container">
+
+            <div class="variety__top">
+                <h2 class="variety__title h2">{{ variety_data.title }}</h2>
+
+                <a href="#contact-us" class="variety__handover btn btn_orange">{{ variety_data.button }}</a>
+            </div>
+
+
+            <div class="variety__wrapper">
+
+                <div class="variety__gradient"></div>
+
+                {% for item in vlist %}
+
+                    <div class="variety__item">
+                        <div class="variety__inner">
+                            <div class="variety__descr">
+                                <span>{{ item.name }}</span>
+                                <span>{{ item.mark }}</span>
+                            </div>
+
+                            <div class="variety__img">
+                                {{ image(
+                                    item.imgSrc,
+                                    ext = 'jpg',
+                                    width = '342',
+                                    height = '342'
+                                ) }}
+                            </div>
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+
+            <button class="variety__more btn btn_orange" type="button">Загрузить ещё</button>
+
+        </div>
+    </section>
+
+{% endmacro %}

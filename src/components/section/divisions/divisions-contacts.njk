@@ -1,0 +1,226 @@
+{% macro divisionsContactsSection(input_name = 'category') %}
+
+    <div class="divisions section">
+        <div class="container">
+
+            {% set cities_list = [
+            {
+                name: 'Гофроупаковка',
+                value: 'gofro',
+                isChecked: true,
+                isNonOffice: true
+            },
+            {
+                name: 'Тарный картон',
+                value: 'carton',
+                isChecked: false,
+                isNonOffice: true
+            },
+            {
+                name: 'Ресайклинг',
+                value: 'recycling',
+                isChecked: false,
+                isNonOffice: true
+            },
+            {
+                name: 'Контакты офиса',
+                value: 'office_contacts',
+                isChecked: false,
+                isNonOffice: false
+            }
+        ] %}
+
+            <div class="divisions__wrapper">
+
+                <div class="divisions__panel hidescrollbar">
+
+                    <fieldset class="divisions__cities hidescrollbar">
+
+                        {% for item in cities_list %}
+
+                            <label class="divisions_clabel">
+
+                                <input type="radio" class="divisions__cinput" name="{{ input_name }}" value="{{ item.value }}" {% if item.isChecked %} checked {% endif %}/>
+
+                                <span>{{ item.name }}</span>
+
+                            </label>
+
+                        {% endfor %}
+
+
+                    </fieldset>
+
+                </div>
+
+
+                <div class="divisions__tabs">
+
+                    {% for item in cities_list %}
+
+                        {% if item.isNonOffice %}
+
+                            <fieldset class="divisions__groups divisions__groups_contacts {% if item.isChecked %} active {% endif %}" data-value="{{ item.value }}">
+
+                                <div class="divisions__reference_center">
+                                    <div class="divisions__icon btn_round btn_orange btn_phone"></div>
+                                    <div class="divisions__text">
+                                        <a href="tel:88006009800">8 800 600 98 00</a>
+                                        <span>Единый справочный центр</span>
+                                    </div>
+                                </div>
+
+                                <div class="divisions__item">
+                                    <label class="divisions__olabel">
+
+                                        <input type="radio" class="divisions__oinput" name="{{ item.value }}-{{ input_name }}" value="kuvshinovo"/>
+
+                                        <span>СФТ Пакеджинг Кувшиново, Тверская область</span>
+
+                                    </label>
+
+                                    <div class="divisions__info">
+
+                                        <span>385012, Республика Адыгея, г. Майкоп, пер. Профсоюзный, 2</span>
+
+                                        <a href="tel:88006009800">88006009800 (многоканальный)</a>
+
+                                        <div class="divisions__links">
+                                            <a href="#">Смотреть на карте</a>
+                                            <a href="#" download>Скачать схему проезда</a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="divisions__item">
+                                    <label class="divisions__olabel">
+
+                                        <input type="radio" class="divisions__oinput" name="{{ item.value }}-{{ input_name }}" value="taganrog"/>
+
+                                        <span>СФТ Пакеджинг Таганрог, Ростовская область</span>
+
+                                    </label>
+
+                                    <div class="divisions__info">
+
+                                        <span>385012, Республика Адыгея, г. Майкоп, пер. Профсоюзный, 2</span>
+
+                                        <a href="tel:88006009800">88006009800 (многоканальный)</a>
+
+                                        <div class="divisions__links">
+                                            <a href="#">Смотреть на карте</a>
+                                            <a href="#" download>Скачать схему проезда</a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="divisions__item">
+                                    <label class="divisions__olabel">
+
+                                        <input type="radio" class="divisions__oinput" name="{{ item.value }}-{{ input_name }}" value="maikop"/>
+
+                                        <span>СФТ Пакеджинг Майкоп, республика Адыгея</span>
+
+                                    </label>
+
+                                    <div class="divisions__info">
+
+                                        <span>385012, Республика Адыгея, г. Майкоп, пер. Профсоюзный, 2</span>
+
+                                        <a href="tel:88006009800">88006009800 (многоканальный)</a>
+
+                                        <div class="divisions__links">
+                                            <a href="#">Смотреть на карте</a>
+                                            <a href="#" download>Скачать схему проезда</a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="divisions__item">
+                                    <label class="divisions__olabel">
+
+                                        <input type="radio" class="divisions__oinput" name="{{ item.value }}-{{ input_name }}" value="aleksin"/>
+
+                                        <span>СФТ Пакеджинг Алексин, Тульская область</span>
+
+                                    </label>
+
+                                    <div class="divisions__info">
+
+                                        <span>385012, Республика Адыгея, г. Майкоп, пер. Профсоюзный, 2</span>
+
+                                        <a href="tel:88006009800">88006009800 (многоканальный)</a>
+
+                                        <div class="divisions__links">
+                                            <a href="#">Смотреть на карте</a>
+                                            <a href="#" download>Скачать схему проезда</a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </fieldset>
+
+                        {% else %}
+
+                            <div class="divisions__groups divisions__groups_contacts divisions__groups_office" data-value="{{ item.value }}">
+
+                                <div class="divisions__reference_center">
+                                    <div class="divisions__icon btn_round btn_orange btn_phone"></div>
+                                    <div class="divisions__text">
+                                        <a href="tel:88006009800">8 800 600 98 00</a>
+                                        <span>Единый справочный центр</span>
+                                    </div>
+                                </div>
+
+                                <div class="divisions__data">
+
+                                    <div class="divisions__data_item">
+                                        <span>Телефон</span>
+                                        <a href="tel:+7(495)2151082">+7 (495) 215 10 82</a>
+                                    </div>
+
+                                    <div class="divisions__data_item">
+                                        <span>E-mail</span>
+                                        <a href="mailto:nbi@novobi.ru">nbi@novobi.ru</a>
+                                    </div>
+
+                                    <div class="divisions__data_item divisions__data_address">
+                                        <span>Адрес</span>
+                                        <p>г. Москва, Романов переулок, д.4, стр.2</p>
+                                    </div>
+
+                                    <div class="divisions__links">
+                                        <a href="#">Смотреть на карте</a>
+                                        <a href="#" download>Скачать схему проезда</a>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        {% endif %}
+
+                    {% endfor %}
+
+                </div>
+
+
+                <div class="divisions__map">
+                    <img src="/assets/img/map.jpg" alt=""/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endmacro %}

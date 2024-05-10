@@ -1,0 +1,51 @@
+.innovation-slider {
+
+    @include media(max, desktop) {
+        margin: 0 calc(-1 * var(--container-t-gutter-x));
+        padding: 0 var(--container-t-gutter-x);
+    }
+
+    @include media(max, tablet) {
+        margin: 0 calc(-1 * var(--container-m-gutter-x));
+        padding: 0 var(--container-m-gutter-x);
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        max-width: 240px;
+    }
+
+    .swiper-slide {
+        @include media(max, desktop) {
+            width: 355px;
+        }
+
+        @include media(max, tablet) {
+            width: 335px;
+        }
+    }
+
+    .swiper-scrollbar {
+        position: static;
+        margin-top: 30px;
+        background-color: rgba($color: #fff, $alpha: .5);
+        height: 1px;
+        margin-bottom: 1px;
+
+        @include media(min, desktop) {
+            display: none !important;
+        }
+    }
+
+    .swiper-scrollbar-drag {
+        height: 3px;
+        top: -1px;
+        background-color: #fff;
+    }
+}

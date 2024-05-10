@@ -1,0 +1,33 @@
+.detail-slider {
+
+    &__main {
+        border-radius: var(--border-radius);
+    }
+
+    &__thumbs {
+        margin-top: 5px;
+        
+        .swiper-slide img {
+            padding: 5px;
+            border: 1px solid transparent;
+            border-radius: 15px;
+            cursor: pointer;
+
+            width: calc(100% - 12px);
+        }
+
+        .swiper-slide-thumb-active img {
+            border-color: var(--color-green);
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .swiper-buttons-static {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+    }
+}

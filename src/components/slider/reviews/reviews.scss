@@ -1,0 +1,32 @@
+.section-reviews {
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+
+        @include media(max, desktop) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__slider {
+        @include media(max, desktop) {
+            margin: 0 calc(-1 * var(--container-t-gutter-x));
+            padding: 0 var(--container-t-gutter-x);
+        }
+
+        @include media(min, tablet) {
+            @include media(max, desktop) {
+                .swiper-slide {
+                    width: 415px !important;
+                }
+            }
+        }
+
+        @include media(max, tablet) {
+            margin: 0 calc(-1 * var(--container-m-gutter-x));
+            padding: 0 var(--container-m-gutter-x);
+        }
+    }
+}

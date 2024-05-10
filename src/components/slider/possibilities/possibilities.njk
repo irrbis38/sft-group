@@ -1,0 +1,70 @@
+{% from "components/media/image.njk" import image %}
+
+<section class="possibilities section">
+    <div class="possibilities__bg">
+        {{ image(
+            src = '/assets/img/possibilities/possibilities_bg',
+            ext = 'jpg',
+            adaptive = [{
+                breakpoint: 'tablet',
+                src: '/assets/img/possibilities/possibilities_bg_tablet',
+                ext: 'jpg'
+            }],
+            width = '1440',
+            height = '900'
+        ) }}
+    </div>
+    <div class="container">
+
+        <div class="possibilities__top">
+
+            <h2 class="possibilities__title">Возможности производства</h2>
+
+            <a href="№" class="possibilities__link btn btn_gradient">О компании</a>
+
+        </div>
+
+
+        <div class="possibilities__arrows">
+            <button class="possibilities__prev" aria-label="Показать предыдущий слайд"></button>
+            <button class="possibilities__next" aria-label="Показать следующий слайд"></button>
+        </div>
+
+        {% set possibilities_data = [
+            'Мы – за синергию. Развиваемся вместе с партнёрами и выстраиваем долгосрочные отношения',
+            'Действующие предприятия с реальными мощностями: 780 млн м2 гофроупаковка 510 т. тн. тарные картоны 510 т. тн. заготовка макулатуры',
+            'Более 10 000 партнёров и поставщиков за 20 лет на рынке в качестве группы',
+            'Мы – за синергию. Развиваемся вместе с партнёрами и выстраиваем долгосрочные отношения',
+            'Действующие предприятия с реальными мощностями: 780 млн м2 гофроупаковка 510 т. тн. тарные картоны 510 т. тн. заготовка макулатуры',
+            'Более 10 000 партнёров и поставщиков за 20 лет на рынке в качестве группы'
+        ] %}
+
+        <div class="possibilities__slider swiper">
+
+            <div class="possibilities__wrapper swiper-wrapper">
+
+                {% for item in possibilities_data %}
+
+                    <div class="possibilities__slide swiper-slide">
+                        <div class="glassy-card">
+                            <div class="glassy-card__wrapper">
+                                <div class="possibilities__name">
+                                    <img src="/assets/img/possibilities/possibilities_icon.svg" alt=""/>
+                                </div>
+
+                                <p class="possibilities__text">{{ item }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+
+            <div class="possibilities__bottom">
+                <span class="possibilities__progressbar"></span>
+            </div>
+        </div>
+    </div>
+</section>

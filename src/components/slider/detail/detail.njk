@@ -1,0 +1,63 @@
+{% from "components/media/image.njk" import image %}
+
+{% set slides = [{
+    src: '/assets/img/detail/about-1',
+    ext: 'jpg'
+},{
+    src: '/assets/img/detail/about-2',
+    ext: 'jpg'
+},{
+    src: '/assets/img/detail/about-3',
+    ext: 'jpg'
+},{
+    src: '/assets/img/detail/about-4',
+    ext: 'jpg'
+},{
+    src: '/assets/img/detail/about-1',
+    ext: 'jpg'
+},{
+    src: '/assets/img/detail/about-2',
+    ext: 'jpg'
+},{
+    src: '/assets/img/detail/about-3',
+    ext: 'jpg'
+},{
+    src: '/assets/img/detail/about-4',
+    ext: 'jpg'
+}] %}
+
+<div class="detail-slider">
+    <div class="detail-slider__main swiper">
+        <div class="swiper-wrapper">
+            {% for slide in slides %}
+                <div class="swiper-slide">
+                    {{ image(
+                        src = slide.src,
+                        ext = slide.ext
+                    ) }}
+                </div>
+            {% endfor %}
+        </div>
+        
+        {% if slides | length >= 4 %}
+            <div class="swiper-buttons-static">
+                <div class="swiper-button-secondary swiper-button-prev"></div>
+                <div class="swiper-button-secondary swiper-button-next"></div>
+            </div>
+        {% endif %}
+    </div>
+    {% if slides | length >= 4 %}
+        <div class="detail-slider__thumbs swiper">
+            <div class="swiper-wrapper">
+                {% for slide in slides %}
+                    <div class="swiper-slide">
+                        {{ image(
+                            src = slide.src,
+                            ext = slide.ext
+                        ) }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+</div>

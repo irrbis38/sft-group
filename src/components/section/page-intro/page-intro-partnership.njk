@@ -1,0 +1,62 @@
+{% from "components/media/image.njk" import image %}
+
+{% macro pageIntro(
+    class,
+    text,
+    title,
+    imgFull,
+    imgTablet
+) %}
+
+    <section class="page_intro section {{ class }}">
+        <div class="page_intro__bg">
+            {{ image(
+                imgFull,
+                ext = 'jpg',
+                adaptive = [{
+                    breakpoint: 'tablet',
+                    src: imgTablet,
+                    ext: 'jpg'
+                }],
+                width = '1440',
+                height = '800'
+            ) }}
+        </div>
+        <div class="container">
+
+            <div class="page_intro__card glassy-card">
+
+                <div class="page_intro__card_wrapper glassy-card__wrapper">
+
+                    <div class="page_intro__icon"></div>
+
+                    <div class="page_intro__text">
+                        {{ text }}
+                    </div>
+
+                </div>
+
+            </div>
+
+            <h1 class="page_intro__title">{{ title }}</h1>
+
+
+        </div>
+
+        <div class="container page_intro__container">
+
+            <div class="page_intro__bottom">
+                <a href="#next-section" class="page_intro__next btn_gradient btn_follow" aria-label="Перейти к следующему блоку"></a>
+
+                <div class="page_intro__nav">
+                    <a href="https://vk.com/video_ext.php?oid=-132591577&id=456239161&hd=2" data-type="iframe" data-video class="page_intro__watch video-card__trigger">
+                        <span class="page_intro__watch_icon"></span>
+                        <span class="page_intro__watch_btn btn btn_gradient">Посмотреть видео о компании</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+{% endmacro %}
